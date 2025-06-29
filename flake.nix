@@ -56,14 +56,15 @@
         })
       ];
     };
-
-    homeConfigurations."zen" = home-manager.lib.homeManagerConfiguration {
+    
+    let
       pkgs = nixpkgs.legacyPackages.${system};
+    in
+    homeConfigurations."zen" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
       modules = [
         ./home.nix
-        {
-          
-        }
+      pkgs = nixpkgs.legacyPackages.${system};
       ];
       extraSpecialArgs = { inherit inputs; };
     };
