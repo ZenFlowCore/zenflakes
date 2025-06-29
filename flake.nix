@@ -30,6 +30,8 @@
   outputs = { self, nixpkgs, quickshell, home-manager, spicetify-nix, ... }@inputs:
   let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  
   in {
     defaultPackage.${system} = home-manager.defaultPackage.${system};
 
@@ -57,14 +59,11 @@
       ];
     };
     
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
+    
     homeConfigurations."zen" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
         ./home.nix
-      pkgs = nixpkgs.legacyPackages.${system};
       ];
       extraSpecialArgs = { inherit inputs; };
     };
