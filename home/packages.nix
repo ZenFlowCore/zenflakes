@@ -13,6 +13,8 @@ with pkgs;
     git
     kitty
     warp-terminal
+    fish
+    grc
 
     # >>MUSIC<<
     easyeffects
@@ -54,12 +56,5 @@ with pkgs;
     kdePackages.qtbase
     kdePackages.qtdeclarative
 
-    # >>FISH<<
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fishPlugins.grc
-    fish
-    grc
+    
 ]
