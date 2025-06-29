@@ -18,7 +18,7 @@ in
 
     xdg.configFile = {
       "quickshell" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.homeDirectory}/config/quickshell";
+        source = config.lib.file.mkOutOfStoreSymlink "~/zenflakes/config/quickshell";
       };
     };
   };

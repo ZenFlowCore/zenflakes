@@ -4,7 +4,7 @@
 {
   
   imports = [
-    ./quickshell
+    ./quickshell.nix
   ];
 
 }
