@@ -37,7 +37,7 @@
   in {
     defaultPackage.${system} = home-manager.defaultPackage.${system};
 
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.default = lib.nixosSystem {
       system = system;
       specialArgs = { inherit inputs; };
       modules = [
