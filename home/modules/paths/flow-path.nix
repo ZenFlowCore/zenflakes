@@ -1,4 +1,4 @@
-# >>root:/home/modules/custom/dotfiles-path.nix<<
+# >>root:/home/modules/custom/flow-path.nix<<
 { config, lib, ... }:
 
 let

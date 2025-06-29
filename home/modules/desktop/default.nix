@@ -4,6 +4,7 @@
 {
   imports = [
     ./quickshell.nix
+    ../paths/flow-path.nix
   ];
 
 }
