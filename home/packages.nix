@@ -9,7 +9,6 @@ with pkgs;
     rustup
     tmux
     ghostty
-    git
     kitty
     foot
 
@@ -48,6 +47,7 @@ with pkgs;
     spicetify-cli
     slurp
     matugen
+    clock-rs
     gpu-screen-recorder
 
     # >>QUICKSHILL<<
