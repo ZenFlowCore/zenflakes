@@ -30,8 +30,10 @@
   outputs = { self, nixpkgs, quickshell, home-manager, spicetify-nix, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  
+    pkgs = import nixpkgs {
+      inherit system;
+    };
+    lib = nixpkgs.lib;
   in {
     defaultPackage.${system} = home-manager.defaultPackage.${system};
 

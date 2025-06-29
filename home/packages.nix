@@ -32,6 +32,7 @@ with pkgs;
     unzip
     killall
     tree
+    bat
 
     # >>IDK<<
     vesktop
