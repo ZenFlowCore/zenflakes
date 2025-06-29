@@ -50,7 +50,7 @@
     homeConfigurations."zen" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ./home.nix
+        ./hosts/default/home.nix
       ];
       extraSpecialArgs = { inherit inputs; };
     };
