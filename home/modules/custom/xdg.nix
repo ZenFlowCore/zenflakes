@@ -2,10 +2,10 @@
 
 with lib;
 let
-  cfg = config.zen.module.shell.xdg;
+  cfg = config.zen.modules.custom.xdg;
 in
 {
-  options.zen.modules.shell.xdg = {
+  options.zen.modules.custom.xdg = {
     enable = mkEnableOption "XDG base directories configuration";
     enableUserDirs = mkOption {
       description = "Enables management of XDG user directories";
