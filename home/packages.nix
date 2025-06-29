@@ -10,9 +10,9 @@ with pkgs;
     rustup
     tmux
     ghostty
-    fish
     git
     kitty
+    warp-terminal
 
     # >>MUSIC<<
     easyeffects
@@ -53,4 +53,13 @@ with pkgs;
     libsForQt5.qt5.qtgraphicaleffects
     kdePackages.qtbase
     kdePackages.qtdeclarative
+
+    # >>FISH<<
+    fishPlugins.done
+    fishPlugins.fzf-fish
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fishPlugins.grc
+    fish
+    grc
 ]

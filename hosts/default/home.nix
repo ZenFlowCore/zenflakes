@@ -1,5 +1,10 @@
 { config, pkgs, inputs, ... }:
 
+let 
+  
+  packagmes = import ../../home/packages.nix { inherit pkgs; };
+
+in
 {
   home.username = "zen";
   home.homeDirectory = "/home/zen";
@@ -13,45 +18,13 @@
     # Programs!
     ../../modules/programs/spicetify.nix
     ../../modules/programs/git.nix
-
-    # Inputs!
+    ../../modules/programs/development/shell/fish.nix
+    # Inputs
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
-  home.packages = with pkgs;[
-    # "Hello, world!" when run.
-    hello
-    gpu-screen-recorder
-    rustup
-    vesktop
-    tmux
-    cava
-    zed-editor
-    libgcc
-    yazi
-    wget
-    fish
-    fzf
-    eza
-    fastfetch
-    nautilus
-    unzip
-    tree
-    git
-    wofi
-    swaynotificationcenter
-    kitty
-    spicetify-cli
-    mission-center
-    hyprshot
-    slurp
-    grim
-    swww
-    matugen
-    ghostty
-    zoxide
-    killall
-  ];
+  home.packages = packagmes;
+    
 
   services.cliphist = {
     enable = true;
