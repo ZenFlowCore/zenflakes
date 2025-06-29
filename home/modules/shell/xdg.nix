@@ -2,7 +2,7 @@
 
 with lib;
 let
-  cfg = config.zen.modules.custom.xdg;
+  cfg = config.zen.module.shell.xdg;
 in
 {
   options.zen.modules.shell.xdg = {
