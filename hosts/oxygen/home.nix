@@ -1,19 +1,14 @@
 { config, pkgs, inputs, ... }:
 
-let 
-  
-  flows = import ../../home/packages.nix { inherit pkgs; };
-
-in
-{
+let flows = import ../../home/packages.nix { inherit pkgs; };
+in {
   home.username = "zen";
   home.homeDirectory = "/home/zen";
-  home.stateVersion = "25.05"; 
+  home.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
 
-  imports = [ 
+  imports = [
     # Programs!
-    inputs.spicetify-nix.homeManagerModules.default  
     ../../home/modules/default.nix
   ];
   home.packages = flows;
@@ -21,15 +16,14 @@ in
     enable = true;
     allowImages = true;
   };
-  home.file = {
-  };
+  home.file = { };
   home.sessionVariables = {
-  # arise
+    # arise
   };
-  
+
   zen = {
     modules = {
-      desktop.quickshell.enable = true;    
+      desktop.quickshell.enable = true;
       cli.spicetify.enable = true;
     };
   };

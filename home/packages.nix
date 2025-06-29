@@ -11,6 +11,7 @@ with pkgs;
     ghostty
     kitty
     foot
+    gcc
 
     # >>MUSIC<<
     easyeffects

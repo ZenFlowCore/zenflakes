@@ -27,32 +27,27 @@
     };
   };
 
-  outputs = { self, nixpkgs,  home-manager,  ... }@inputs:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-    lib = nixpkgs.lib;
-  in {
-    defaultPackage.${system} = home-manager.defaultPackage.${system};
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+      lib = nixpkgs.lib;
+    in {
+      defaultPackage.${system} = home-manager.defaultPackage.${system};
 
-    nixosConfigurations.default = lib.nixosSystem {
-      system = system;
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/default/configuration.nix
-        inputs.stylix.nixosModules.stylix
-      ];
+      nixosConfigurations.oxygen = lib.nixosSystem {
+        system = system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/oxygen/configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
+
+      homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/oxygen/home.nix ];
+        extraSpecialArgs = { inherit inputs; };
+      };
     };
-    
-    
-    homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-        ./hosts/default/home.nix
-      ];
-      extraSpecialArgs = { inherit inputs; };
-    };
-  };
 }

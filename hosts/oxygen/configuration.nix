@@ -5,12 +5,12 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
-  
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
+
   services.power-profiles-daemon.enable = false;
   systemd.user.units.swaync.enable = true;
 
@@ -26,24 +26,23 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
-  
+
   hardware.graphics.enable = true;
 
-
   programs.bash = {
-  interactiveShellInit = ''
-    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-    then
-      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-    fi
-  '';
-};
+    interactiveShellInit = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "flow"; # Define your hostname.
@@ -124,29 +123,23 @@
   services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "zen";
   services.mpd.enable = true;
-  
+
   # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  services.auto-cpufreq = {
-  enable = true;
-  };
+  services.auto-cpufreq = { enable = true; };
 
   # List packages installed in system profile. To search, run:
- environment.systemPackages = with pkgs; [
-  neovim
-  ly
-  home-manager
-  inputs.zen-browser.packages.x86_64-linux.default
-];
+  environment.systemPackages = with pkgs; [
+    neovim
+    ly
+    home-manager
+    inputs.zen-browser.packages.x86_64-linux.default
+  ];
 
-
-
-
-
-  system.stateVersion = "25.05"; 
+  system.stateVersion = "25.05";
 
 }
