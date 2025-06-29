@@ -12,6 +12,7 @@ with pkgs;
     ghostty
     git
     kitty
+    foot
 
     # >>MUSIC<<
     easyeffects
