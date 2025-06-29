@@ -47,7 +47,7 @@
     };
     
     
-    homeConfigurations."zen" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
         ./hosts/default/home.nix
