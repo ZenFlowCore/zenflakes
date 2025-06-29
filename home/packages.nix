@@ -30,6 +30,8 @@ with pkgs;
     # >>SYSTEM UTILITIES<<
     wget
     mission-center
+    auto-cpufreq
+    btop
     unzip
     killall
     tree

@@ -134,6 +134,7 @@
  environment.systemPackages = with pkgs; [
   neovim
   ly
+  auto-cpufreq
   home-manager
   inputs.zen-browser.packages.x86_64-linux.default
 ];
