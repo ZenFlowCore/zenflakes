@@ -6,7 +6,6 @@ with pkgs;
     hello
   
     # >>DEV<<
-    zed-editor
     rustup
     tmux
     ghostty
