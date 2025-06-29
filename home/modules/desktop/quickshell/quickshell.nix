@@ -9,7 +9,7 @@ in
     enable = mkEnableOption "Quickshell configuration";
   };
 
-  config = mklf cfg.enable {
+  config = mkIf cfg.enable {
     home.packages = [
       inputs.quickshell.packages."${pkgs.system}".default
       pkgs.qt6.qtdeclarative

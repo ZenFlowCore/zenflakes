@@ -16,12 +16,8 @@ in
     
 
     # Programs!
-    ../../home/modules/cli/spicetify/spicetify.nix
-    ../../home/modules/desktop/quickshell/quickshell.nix
-    ../../home/modules/development/git/git.nix
-    ../../home/modules/shell/fish.nix
-    # Inputs
-    inputs.spicetify-nix.homeManagerModules.default
+    ../../home/modules/default.nix
+    
   ];
 
   home.packages = flows;

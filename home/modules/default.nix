@@ -1,4 +1,4 @@
-# >>paths.Root/home/modules/<<
+# >>paths.Root/home/modules/default.nix<<
 
 { ... }:
 
@@ -10,6 +10,9 @@
     ./development
     ./wellbeing
     ./editors
+    ./other
+    ./terminal
+    ./apps
     ./productivity
     ./programs
     ./shell

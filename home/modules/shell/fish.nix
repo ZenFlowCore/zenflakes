@@ -27,7 +27,6 @@
       abbr --add v nvim
       abbr --add ls exa --oneline --reverse --sort=type
       abbr --add srcy z src
-      abbr --add nvf nvim "$(fzf)"
     '';
   };
 }
