@@ -16,9 +16,9 @@ in
     
 
     # Programs!
-    ../../modules/programs/spicetify.nix
-    ../../modules/programs/git.nix
-    ../../modules/programs/development/shell/fish.nix
+    ../../home/modules/programs/spicetify.nix
+    ../../home/modules/programs/git.nix
+    ../../home/modules/programs/development/shell/fish.nix
     # Inputs
     inputs.spicetify-nix.homeManagerModules.default
   ];
