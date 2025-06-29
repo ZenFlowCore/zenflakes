@@ -62,9 +62,7 @@
       modules = [
         ./home.nix
         {
-          imports = [
-            spicetify-nix.homeManagerModules.default
-          ];
+          
         }
       ];
       extraSpecialArgs = { inherit inputs; };
