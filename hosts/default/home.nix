@@ -12,25 +12,16 @@ in
   nixpkgs.config.allowUnfree = true;
 
   imports = [ 
-    
-    
-
     # Programs!
     ../../home/modules/default.nix
-    
   ];
-
   home.packages = flows;
-    
-
   services.cliphist = {
     enable = true;
     allowImages = true;
   };
-
   home.file = {
   };
-
   home.sessionVariables = {
   # arise
   };
