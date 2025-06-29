@@ -29,7 +29,7 @@ in
   zen = {
     modules = {
       desktop.quickshell.enable = true;    
-      desktop.spicetify.enable = true;
+      cli.spicetify.enable = true;
       
     };
   };
