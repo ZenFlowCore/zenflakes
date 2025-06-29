@@ -19,7 +19,7 @@ in
     ../../home/modules/cli/spicetify/spicetify.nix
     ../../home/modules/desktop/quickshell/quickshell.nix
     ../../home/modules/development/git/git.nix
-    ../../home/modules/development/shell/fish.nix
+    ../../home/modules/shell/fish.nix
     # Inputs
     inputs.spicetify-nix.homeManagerModules.default
   ];

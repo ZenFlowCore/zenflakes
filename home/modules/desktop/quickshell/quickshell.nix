@@ -2,14 +2,14 @@
 
 with lib;
 let
-  cfg = config.zen.modules.desktop.quickshell
+  cfg = config.zen.modules.desktop.quickshell;
 in
 {
   options.zen.modules.desktop.quickshell = {
     enable = mkEnableOption "Quickshell configuration";
   };
 
-  config = mk;f cfg.enable {
+  config = mklf cfg.enable {
     home.packages = [
       inputs.quickshell.packages."${pkgs.system}".default
       pkgs.qt6.qtdeclarative
@@ -22,5 +22,5 @@ in
       };
     };
   };
-  };
+  
 }
