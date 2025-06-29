@@ -11,12 +11,6 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-    "zen" = import ./home.nix;
-    };
-  };
   systemd.user.units.swaync.enable = true;
 
   programs.hyprland = {
@@ -122,7 +116,6 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zen = {
     isNormalUser = true;
-    description = "zen";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 

@@ -61,4 +61,5 @@ with pkgs;
     fishPlugins.grc
     fish
     grc
+    flat-remix-gtk
 ]
