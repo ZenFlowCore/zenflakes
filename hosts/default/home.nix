@@ -26,5 +26,11 @@ in
   # arise
   };
   
+  zen = {
+    modules = {
+      desktop.quickshell.enable = true;    
+    };
+  };
+
   programs.home-manager.enable = true;
 }

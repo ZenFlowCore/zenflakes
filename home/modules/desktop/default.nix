@@ -1,8 +1,7 @@
-# >>paths.Root/home/modules<<
+# >>root:/home/modules/desktop/<<
 { ... }:
 
 {
-  
   imports = [
     ./quickshell.nix
   ];
