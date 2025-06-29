@@ -43,8 +43,6 @@
       modules = [
         ./hosts/default/configuration.nix
         inputs.stylix.nixosModules.stylix
-
-        
       ];
     };
     
