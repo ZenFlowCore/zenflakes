@@ -13,6 +13,7 @@ in
 
   imports = [ 
     # Programs!
+    inputs.spicetify-nix.homeManagerModules.default  
     ../../home/modules/default.nix
   ];
   home.packages = flows;
@@ -30,7 +31,6 @@ in
     modules = {
       desktop.quickshell.enable = true;    
       cli.spicetify.enable = true;
-      
     };
   };
 

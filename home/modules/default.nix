@@ -12,9 +12,7 @@
     ./editors
     ./other
     ./terminal
-    ./apps
     ./productivity
-    ./programs
     ./shell
   ];
 }
