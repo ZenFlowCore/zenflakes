@@ -10,7 +10,8 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
-
+  
+  services.power-profiles-daemon.enable = false;
   systemd.user.units.swaync.enable = true;
 
   programs.hyprland = {
@@ -130,14 +131,19 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  services.auto-cpufreq = {
+  enable = true;
+  };
+
   # List packages installed in system profile. To search, run:
  environment.systemPackages = with pkgs; [
   neovim
   ly
-  auto-cpufreq
   home-manager
   inputs.zen-browser.packages.x86_64-linux.default
 ];
+
+
 
 
 

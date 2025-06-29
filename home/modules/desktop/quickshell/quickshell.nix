@@ -9,6 +9,7 @@ in
     enable = mkEnableOption "Quickshell configuration";
   };
 
+  config = mk;f cfg.enable {
     home.packages = [
       inputs.quickshell.packages."${pkgs.system}".default
       pkgs.qt6.qtdeclarative
@@ -20,5 +21,6 @@ in
         source = config.lib.file.mkOutOfStoreSymlink "${config.homeDirectory}/config/quickshell";
       };
     };
+  };
   };
 }
