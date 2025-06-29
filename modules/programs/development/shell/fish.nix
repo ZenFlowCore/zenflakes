@@ -27,8 +27,8 @@ abbr --add ff fastfetch
 abbr --add v nvim
 abbr --add ls exa --oneline --reverse --sort=type
 abbr --add srcy z src
-    ''
-  }
+    '';
+  };
 
 
 }
