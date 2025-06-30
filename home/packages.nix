@@ -44,7 +44,6 @@ with pkgs; [
   grim
   fastfetch
   swww
-  spicetify-cli
   slurp
   matugen
   clock-rs
