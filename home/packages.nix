@@ -1,69 +1,68 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
-with pkgs; 
-[
-    # >>"Hello, world!" when run.<<
-    hello
-  
-    # >>DEV<<
-    rustup
-    tmux
-    ghostty
-    kitty
-    foot
-    gcc
+with pkgs; [
+  # >>"Hello, world!" when run.<<
+  hello
 
-    # >>MUSIC<<
-    easyeffects
-    cava
+  # >>DEV<<
+  rustup
+  tmux
+  ghostty
+  kitty
+  foot
+  gcc
 
-    # >>NAVIGATION<<
-    fzf
-    ulauncher
-    zoxide
-    yazi
-    wofi
-    eza
-    nautilus
+  # >>MUSIC<<
+  easyeffects
+  cava
 
-    # >>SYSTEM UTILITIES<<
-    wget
-    mission-center
-    auto-cpufreq
-    btop
-    unzip
-    killall
-    tree
-    bat
+  # >>NAVIGATION<<
+  fzf
+  ulauncher
+  zoxide
+  yazi
+  wofi
+  eza
+  nautilus
 
-    # >>IDK<<
-    vesktop
-    swaynotificationcenter
+  # >>SYSTEM UTILITIES<<
+  wget
+  mission-center
+  auto-cpufreq
+  btop
+  unzip
+  killall
+  tree
+  bat
 
-    # >>WALLPAPER & CUSTOMIZATION & SCREENUTILS<<
-    hyprshot
-    grim
-    fastfetch
-    swww
-    spicetify-cli
-    slurp
-    matugen
-    clock-rs
-    gpu-screen-recorder
+  # >>IDK<<
+  vesktop
+  swaynotificationcenter
 
-    # >>QUICKSHILL<<
-    qt6Packages.qt5compat
-    libsForQt5.qt5.qtgraphicaleffects
-    kdePackages.qtbase
-    kdePackages.qtdeclarative
+  # >>WALLPAPER & CUSTOMIZATION & SCREENUTILS<<
+  hyprshot
+  grim
+  fastfetch
+  swww
+  spicetify-cli
+  slurp
+  matugen
+  clock-rs
+  gpu-screen-recorder
 
-    # >>FISH<<
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fishPlugins.grc
-    fish
-    grc
-    flat-remix-gtk
+  # >>QUICKSHILL<<
+  qt6Packages.qt5compat
+  libsForQt5.qt5.qtgraphicaleffects
+  kdePackages.qtbase
+  kdePackages.qtdeclarative
+
+  # >>FISH<<
+  fishPlugins.done
+  fishPlugins.fzf-fish
+  fishPlugins.forgit
+  fishPlugins.hydro
+  fishPlugins.grc
+  fish
+  grc
+  flat-remix-gtk
 ]
