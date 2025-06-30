@@ -10,22 +10,17 @@ in {
   imports = [
     # Programs!
     ../../home/modules/default.nix
+    inputs.spicetify-nix.homeManagerModules.default
   ];
   home.packages = flows;
   services.cliphist = {
     enable = true;
     allowImages = true;
   };
-  home.file = { };
-  home.sessionVariables = {
-    # arise
-  };
-
-  zen = {
-    modules = {
-      desktop.quickshell.enable = true;
-      cli.spicetify.enable = true;
-    };
+  zen.modules = {
+    desktop.quickshell.enable = true;
+    cli.spicetify.enable = true;
+    terminal.tmux.enable = true;
   };
 
   programs.home-manager.enable = true;

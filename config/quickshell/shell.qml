@@ -11,7 +11,7 @@ import "widgets/bar"
 import "widgets/right_bar"
 import "widgets/border"
 Scope { 
-
+    
   Audio {}
 
   Bar {}

@@ -8,8 +8,6 @@ let
 in {
   options.zen.modules.cli.spicetify = { enable = mkEnableOption "Spicetify"; };
 
-  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
-
   config = mkIf cfg.enable {
 
     programs.spicetify = {

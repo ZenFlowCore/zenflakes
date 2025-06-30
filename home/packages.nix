@@ -6,7 +6,6 @@ with pkgs; [
 
   # >>DEV<<
   rustup
-  tmux
   ghostty
   kitty
   foot
