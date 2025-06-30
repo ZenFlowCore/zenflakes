@@ -37,10 +37,7 @@
       nixosConfigurations.oxygen = lib.nixosSystem {
         system = system;
         specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/oxygen/configuration.nix
-          inputs.stylix.nixosModules.stylix
-        ];
+        modules = [ ./hosts/oxygen/configuration.nix ];
       };
 
       homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
