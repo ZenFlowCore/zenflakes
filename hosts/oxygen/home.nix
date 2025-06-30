@@ -10,8 +10,6 @@ in {
   imports = [
     # Programs!
     ../../home/modules/default.nix
-    ../../home/modules/cli/spicetify.nix
-    inputs.spicetify-nix.homeManagerModules.default
   ];
   home.packages = flows;
   services.cliphist = {
@@ -26,7 +24,7 @@ in {
   zen = {
     modules = {
       desktop.quickshell.enable = true;
-      #      cli.spicetify.enable = true;
+      cli.spicetify.enable = true;
     };
   };
 
