@@ -46,28 +46,28 @@
 #### ZenFlakes Related Objectives
 
 ##### Moving all pkgs from root:/package
-> [!"Hello, world!" when run.]
+##### "Hello, world!" when run.
 - [ ] hello
 
 > root:/home/modules/terminal
-> [!TERMINAL]
+##### TERMINAL
 - [ ] ghostty
 - [ ] kitty
 - [ ] foot
 - [x] tmux
 
 > root:/home/modules/development
-> [!DEVELOPMENT]
+##### DEVELOPMENT
 - [ ] rustup
 - [ ] gcc
 
 > root:/home/modules/desktop
-> [!MUSIC]
+##### MUSIC 
 - [ ] easyeffects
 - [ ] cava
 
 > root:/home/modules/navigation
->[!NAVIGATION]
+##### NAVIGATION
 - [ ] fzf
 - [ ] ulauncher
 - [ ] zoxide
@@ -77,7 +77,7 @@
 - [ ] nautilus
 
 > root:/home/modules/utilities
-> [!SYSTEM UTILITIES]
+##### SYSTEM UTILITIES
 - [ ] wget
 - [ ] mission-center
 - [ ] auto-cpufreq
@@ -87,13 +87,12 @@
 - [ ] tree
 - [ ] bat
 - [ ] swaynotificationcenter
-
 > root:/home/modules/other
-> [!OTHER]
+##### OTHER
 > nothing yet.
 
 > root:/home/modules/ricing
-> [!WALLPAPER & CUSTOMIZATION & SCREENUTILS]
+##### WALLPAPER & CUSTOMIZATION & SCREENUTILS
 - [ ] hyprshot
 - [ ] grim
 - [ ] fastfetch
@@ -106,14 +105,14 @@
 - [ ] flat-remix-gtk
 
 > quickshell.nix is in root:/home/modules/desktop
-> [!QUICKSHILL]
+##### QUICKSHILL
 - [ ] qt6Packages.qt5compat
 - [ ] libsForQt5.qt5.qtgraphicaleffects
 - [ ] kdePackages.qtbase
 - [ ] kdePackages.qtdeclarative
 
 > fish.nix is in root:/home/modules/shell
-> [!FISH]
+##### FISH
 - [ ] fishPlugins.done
 - [ ] fishPlugins.fzf-fish
 - [ ] fishPlugins.forgit
