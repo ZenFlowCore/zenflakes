@@ -1,10 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
-  programs.cava {
+  programs.cava = {
     enable = true;
-    settings = { 
-      color.theme = "shteme";
-    };
+    settings = { color.theme = "shteme"; };
   };
 }
