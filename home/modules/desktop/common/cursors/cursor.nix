@@ -2,7 +2,7 @@
 
 with lib;
 let
-  cfg = config.reiki.modules.desktop.cursor;
+  cfg = config.reiki.modules.desktop.common.cursor;
 
   cursorPackages = {
     "Bibata-Modern-Ice" = pkgs.bibata-cursors;
