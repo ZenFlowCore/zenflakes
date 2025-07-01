@@ -1,8 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 with lib;
 let
-  cfg = config.zen.modules.desktop.common.cursor;
+  cfg = config.zen.modules.desktop.common.cursor.cursor;
 
   cursorPackages = {
     "Bibata-Modern-Ice" = pkgs.bibata-cursors;

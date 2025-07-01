@@ -1,40 +1,31 @@
 { config, lib, pkgs, inputs, ... }:
 
 with lib;
-let
-  # This is for convenience (see the config block)
-  cfg = config.zen.modules.desktop.cava.cava;
+let cfg = config.zen.modules.desktop.music.cava.cava;
 in {
-  options.zen.modules.desktop.cava.cava = {
-    enable = mkEnableOption "Description";
+  options.zen.modules.desktop.music.cava.cava = {
+    enable = mkEnableOption "TO ENABLE OR NOT TO ENABLE :fire:";
+    settings = {
+      framerate = mkOption {
+        description = "Framerate to use";
+        type = types.int;
+        default = 90;
+      };
 
-    framerate = mkOption {
-      description = "Framerate to use";
-      type = types.int;
-      default = 90;
+      overshoot = mkOption {
+        description = "Overshoot amount?";
+        type = types.int;
+        default = 0;
+      };
     };
-
-    autosens = mkOption {
-      description = "Enable autosens?";
-      type = types.int;
-      default = 0;
-    };
-
-    overshoot = mkOption {
-      description = "Overshoot amount?";
-      type = types.int;
-      default = 0;
-    };
-    # this is where you define the settings you want to be able to configure
   };
 
   config = mkIf cfg.enable {
     programs.cava = {
       enable = true;
       settings = {
-        general.framerate = cfg.framerate;
-        autosens = cfg.autosens;
-        overshoot = cfg.overshoot;
+        general.framerate = cfg.settings.framerate;
+        general.overshoot = cfg.settings.overshoot;
       };
     };
   };

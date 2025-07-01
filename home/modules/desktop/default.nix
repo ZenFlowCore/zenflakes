@@ -2,6 +2,5 @@
 { ... }:
 
 {
-  imports = [ ./quickshell.nix ../paths/flow-path.nix ./common ./music ];
-
+  imports = [ ./quickshell.nix ./music ../paths/flow-path.nix ./common ];
 }

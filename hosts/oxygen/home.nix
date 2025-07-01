@@ -19,7 +19,13 @@ in {
   };
   zen.modules = {
     desktop.quickshell.enable = true;
-    desktop.music.cava.cava.enable = true;
+    desktop.music.cava.cava = {
+      enable = true;
+      settings = {
+        framerate = 90;
+        overshoot = -90;
+      };
+    };
     desktop.common.cursor.cursor = {
       enable = true;
       name = "Volantes";
