@@ -19,6 +19,12 @@ in {
   };
   zen.modules = {
     desktop.quickshell.enable = true;
+    desktop.music.cava.cava.enable = true;
+    desktop.common.cursors.cursor = {
+      enable = true;
+      name = "Volantes";
+      size = 20;
+    };
     cli.spicetify.enable = true;
     terminal.tmux.enable = true;
   };
