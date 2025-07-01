@@ -89,7 +89,6 @@
 - [ ] swaynotificationcenter
 > root:/home/modules/other
 ##### OTHER
-> nothing yet.
 
 > root:/home/modules/ricing
 ##### WALLPAPER & CUSTOMIZATION & SCREENUTILS
