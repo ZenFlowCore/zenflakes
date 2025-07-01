@@ -67,7 +67,7 @@
 - [ ] cava
 
 > root:/home/modules/navigation
-> [!NAVIGATION]
+>[!NAVIGATION]
 - [ ] fzf
 - [ ] ulauncher
 - [ ] zoxide
