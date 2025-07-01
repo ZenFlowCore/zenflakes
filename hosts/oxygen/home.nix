@@ -20,7 +20,7 @@ in {
   zen.modules = {
     desktop.quickshell.enable = true;
     desktop.music.cava.cava.enable = true;
-    desktop.common.cursors.cursor = {
+    desktop.common.cursor.cursor = {
       enable = true;
       name = "Volantes";
       size = 20;

@@ -2,7 +2,7 @@
 
 with lib;
 let
-  cfg = config.reiki.modules.desktop.common.cursor;
+  cfg = config.zen.modules.desktop.common.cursor;
 
   cursorPackages = {
     "Bibata-Modern-Ice" = pkgs.bibata-cursors;
@@ -15,7 +15,7 @@ let
     "Adwaita" = pkgs.gnome.adwaita-icon-theme; # fallback/default
   };
 in {
-  options.reiki.modules.desktop.cursor = {
+  options.zen.modules.desktop.common.cursor.cursor = {
     enable = mkEnableOption "Cursor configuration";
 
     name = mkOption {
