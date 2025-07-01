@@ -28,8 +28,6 @@ in {
             set -g @continuum-save-interval '60' # minutes
           '';
         }
-        tmuxPlugins.tpm
-        { }
       ];
       extraConfig = ''
         # Theme: borders
@@ -55,7 +53,7 @@ in {
         set -g @plugin 'tmux-plugins/tpm'
       '';
 
-      prefix = ''"C+" '';
+      prefix = ''C-" "'';
       resizeAmount = 3;
     };
   };
