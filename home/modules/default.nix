@@ -14,5 +14,7 @@
     ./terminal
     ./productivity
     ./shell
+    ./navigation
+    ./utilities
   ];
 }

@@ -30,6 +30,12 @@ in {
         }
       ];
       extraConfig = ''
+
+        # Set prefix
+        unbind C-b
+        set -g prefix C-Space
+        bind C-Space send-prefix
+
         # Theme: borders
         set -g pane-border-lines single
         set -g pane-border-style fg=brightblack
@@ -48,12 +54,10 @@ in {
         set -g status-justify absolute-centre
 
         # Keybinds
-        set -g prefix C-+
         bind r source-file ~/.tmux.conf \; display-message "Config reloaded"
         set -g @plugin 'tmux-plugins/tpm'
       '';
 
-      prefix = ''C-" "'';
       resizeAmount = 3;
     };
   };
