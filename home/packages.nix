@@ -36,6 +36,7 @@ with pkgs; [
 
   # >>IDK<<
   vesktop
+  equibop
   swaynotificationcenter
 
   # >>WALLPAPER & CUSTOMIZATION & SCREENUTILS<<

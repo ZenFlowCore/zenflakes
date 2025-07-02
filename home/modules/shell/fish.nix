@@ -9,8 +9,10 @@
         # Commands to run in interactive sessions can go here
       end
 
+
       export OBSIDIAN_USE_WAYLAND=1
       export PATH="$PATH:/usr/lib/qt6/bin"
+      set -x QS_NO_RELOAD_POPUP 1
       set -x PATH  "$HOME/.local/bin" $PATH
       zoxide init fish | source
       oh-my-posh init fish --config /home/zen/.config/ompsh/theme.toml | source

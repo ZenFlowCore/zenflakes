@@ -40,5 +40,7 @@ in {
       package = cursorPackages.${cfg.name} or (throw
         "Unknown cursor theme: ${cfg.name}");
     };
+    gtk.cursorTheme = cursorPackages.${cfg.name};
+
   };
 }

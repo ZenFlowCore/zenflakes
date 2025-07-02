@@ -70,26 +70,47 @@ Variants {
 
                     
                     anchors {
-                        top: parent.top
                         horizontalCenter: parent.horizontalCenter
                         leftMargin: 20
                         rightMargin: 20
-                        topMargin: -4
 
                     }
                     height: size * 0.5 / 7
                     width: size * 0.7
                     bottomRightRadius: 20
                     bottomLeftRadius: 20
+                    property int targetY: -200
+                    y: toolie.show? -4 : targetY
+                    
+                    Behavior on y {
+                    NumberAnimation  {
+                        id: yAnim
+                        duration: 200
+                        easing.type: Easing.InOutCubic
+                        onFinished: {
+                            if (!toolie.show) {
+                            root.visible = false
+                            }
+                        }
+                    }
+                }
+
                 }
                     GridLayout {
                         id: child
                         anchors {
-                        topMargin: 5
-                        top: parent.top
+                        
                         horizontalCenter: parent.horizontalCenter
                     }
-
+                    
+                    y: toolie.show? 6 : -200
+                    Behavior on y {
+                        NumberAnimation {
+                            duration: 200
+                            easing.type: Easing.InOutCubic
+                        }
+                    }
+                    
 
                     property var size: parent.width / 2
                     height: size * 0.35 / 7
@@ -97,7 +118,6 @@ Variants {
                     columns: 6
                     columnSpacing: 20
                     rowSpacing: 20
-
                     
                     Repeater {
                         model: buttons
@@ -111,20 +131,19 @@ Variants {
                             color: ma.containsMouse ? buttonHoverColor : buttonColor
                             border.color: Colors.primary
                             border.width: ma.containsMouse ? 4 : 0
-                            
                             radius: 20
 
                             Behavior on border.width {
                                 NumberAnimation {
                                     duration: 150
-                                    easing.type: Easing.OutCubic
+                                    easing.type: Easing.InOutCubic
                                 }
                             }
 
                             Behavior on color {
                                 ColorAnimation {
                                     duration: 200
-                                    easing.type: Easing.OutCubic
+                                    easing.type: Easing.InOutCubic
 
                                 }
                             }

@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./tmux.nix ];
+  imports = [ ./tmux.nix ./oh-my-posh.nix ];
 }

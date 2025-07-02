@@ -33,6 +33,8 @@ in {
     };
     cli.spicetify.enable = true;
     terminal.tmux.enable = true;
+    terminal.oh-my-posh.enable = true;
+
   };
 
   programs.home-manager.enable = true;
