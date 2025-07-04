@@ -33,6 +33,7 @@ with pkgs; [
   killall
   tree
   bat
+  gnome-software
 
   # >>IDK<<
   vesktop

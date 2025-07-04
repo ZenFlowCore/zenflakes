@@ -15,9 +15,8 @@
 - [ ] ZenFlow_Lib
 
 #### Quickshell Related Projects
-- [ ] Bar
+- [x] Bar
 - [ ] App Launcher
-- [ ] Bluetooth Manager
 - [ ] Calculator
 - [ ] Calendar
 - [ ] Clipboard Manager
@@ -28,6 +27,7 @@
 - [ ] Emoji Picker
 - [ ] Kanban Board
 - [ ] Network Manager
+- [ ] Bluetooth Manager
 - [ ] Notifications
 - [ ] Power Manager
 - [ ] Power Menu
@@ -38,7 +38,7 @@
 - [ ] Terminal
 - [ ] Tmux Session Manager
 - [ ] Update checker
-- [ ] Vertical Layout
+- [ ] Horizontal Layout
 - [ ] Wallpaper Selector
 - [ ] Workspaces Overview
 - [ ] Multi-monitor support

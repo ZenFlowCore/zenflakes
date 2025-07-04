@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
 import Quickshell.Wayland
-import "../bar"
+import "../../bars/eBars/bar"
 import "root:/colors.js" as Colors
 import "../styles/animations/"
 Variants {

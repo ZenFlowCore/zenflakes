@@ -6,6 +6,8 @@ import QtQuick.Layouts
 import Quickshell.Wayland 
 import "colors.js" as Colors
 import "widgets"
+import "bars/eBars/right_bar"
+import "bars/eBars/bar"
 import "widgets/audio"
 import "widgets/bar"
 import "widgets/right_bar"

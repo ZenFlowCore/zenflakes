@@ -1,5 +1,5 @@
 function random_wallpaper
-    set -l image_dir "/home/zen/Wallpapers/"  # CHANGE THIS to your wallpaper directory
+    set -l image_dir "/home/zen/Pictures/Wallpapers/"  # CHANGE THIS to your wallpaper directory
     set -l images (ls $image_dir/*.jpg 2>/dev/null)
 
     if test (count $images) -eq 0
