@@ -15,6 +15,31 @@ in {
     ];
     qt.enable = true;
 
+    programs.matugen = {
+      enablee = true;
+      variant = dark;
+
+      config.reload = true;
+      config.wallpaper = {
+        command = "swww";
+        arguments = [
+          "img"
+          "-t"
+          "any"
+          "--transition-duration"
+          "1"
+          "--transition-step"
+          "255"
+          "--transition-fps"
+          "90"
+        ];
+        set = true;
+      };
+
+      templates = { };
+
+    };
+
     xdg.configFile = {
       "quickshell" = {
         source = config.lib.file.mkOutOfStoreSymlink

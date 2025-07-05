@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    matugen.url = "github:/InioX/Matugen";
+
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     stylix = {
       url = "github:danth/stylix";

@@ -10,7 +10,7 @@ in {
   imports = [
     # Programs!
     ../../home/modules/default.nix
-    inputs.spicetify-nix.homeManagerModules.default
+
   ];
   home.packages = flows;
   services.cliphist = {
@@ -26,13 +26,15 @@ in {
         overshoot = -90;
       };
     };
+    desktop.music.youtube-music.enable = true;
     desktop.common.cursor.cursor = {
       enable = true;
       name = "Volantes";
       size = 20;
     };
-    cli.spicetify.enable = true;
+    cli.spicetify.enable = false;
     terminal.tmux.enable = true;
+    terminal.kitty.kitty.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
 
   };
