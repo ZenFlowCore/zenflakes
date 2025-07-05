@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./cava ./youtube-music.nix ];
+  imports = [ ./cava ];
 }

@@ -13,7 +13,9 @@ with pkgs; [
 
   # >>MUSIC<<
   easyeffects
+  youtube-music
   cava
+  spicetify-cli
 
   # >>NAVIGATION<<
   fzf
@@ -23,7 +25,6 @@ with pkgs; [
   wofi
   eza
   nautilus
-
   # >>SYSTEM UTILITIES<<
   wget
   mission-center
