@@ -11,6 +11,7 @@ in {
     # Programs!
     ../../home/modules/default.nix
 
+    inputs.spicetify-nix.homeManagerModules.spicetify
   ];
   home.packages = flows;
   services.cliphist = {
@@ -32,7 +33,7 @@ in {
       name = "Volantes";
       size = 20;
     };
-    cli.spicetify.enable = false;
+    cli.spicetify.enable = true;
     terminal.tmux.enable = true;
     terminal.kitty.kitty.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
