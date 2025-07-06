@@ -7,7 +7,5 @@ in {
     enable = mkEnableOption "To Enable or not to enable";
   };
 
-  config.zen.home.modules.desktop.apps.obsidian = {
-    programs.obsidian = { enable = true; };
-  };
+  config = mkIf cfg.enable { programs.obsidian = { enable = true; }; };
 }
