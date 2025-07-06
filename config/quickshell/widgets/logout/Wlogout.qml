@@ -8,6 +8,7 @@ import "root:/colors.js" as Colors
 
 Variants {
     id: root
+    property bool isClosed: true
     property color buttonColor: Colors.background
     property color buttonHoverColor: "#50" + Colors.primary.slice(1)
     default property list<LogoutButton> buttons
@@ -19,6 +20,7 @@ Variants {
         visible: loggie.show
 
         property var modelData
+
         screen: modelData
 
         exclusionMode: ExclusionMode.Ignore
@@ -53,12 +55,13 @@ Variants {
             color: "#00" + Colors.background.slice(1)
             anchors.fill: parent
 
-
             MouseArea {
                 id: mous
                 anchors.fill: parent
-                onClicked: loggie.show = false
-
+                onClicked: {
+                    loggie.show = false;
+                    isClosed = false;
+                }
 
                 Rectangle {
 
@@ -66,22 +69,20 @@ Variants {
                     border.color: "#50" + Colors.primary.slice(1)
                     border.width: 4
 
-                    
                     anchors {
                         bottom: parent.bottom
                         horizontalCenter: parent.horizontalCenter
                         leftMargin: 20
                         rightMargin: 20
                         bottomMargin: -4
-
                     }
                     height: child.height * 1.34
                     width: child.width * 1.05
                     topRightRadius: 20
                     topLeftRadius: 20
                 }
-                    GridLayout {
-                        id: child
+                GridLayout {
+                    id: child
                     anchors {
                         bottom: parent.bottom
                         bottomMargin: 20
@@ -96,7 +97,6 @@ Variants {
                     columnSpacing: 20
                     rowSpacing: 20
 
-                    
                     Repeater {
                         model: buttons
 
@@ -109,7 +109,7 @@ Variants {
                             color: ma.containsMouse ? buttonHoverColor : buttonColor
                             border.color: Colors.primary
                             border.width: ma.containsMouse ? 4 : 0
-                            
+
                             radius: 20
 
                             Behavior on border.width {
@@ -123,7 +123,6 @@ Variants {
                                 ColorAnimation {
                                     duration: 200
                                     easing.type: Easing.OutCubic
-
                                 }
                             }
 
@@ -140,13 +139,9 @@ Variants {
                                 source: Quickshell.iconPath(`/home/zen/zenflakes/config/quickshell/icons/logout/${modelData.icon}.svg`)
                                 implicitSize: 40
                             }
-
-
-                            
                         }
                     }
                 }
-            
             }
         }
     }

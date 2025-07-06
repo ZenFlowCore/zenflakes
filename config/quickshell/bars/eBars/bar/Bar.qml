@@ -12,6 +12,7 @@ import "root:/colors.js" as Colors
 import "root:/widgets/test"
 import "root:/widgets/styles"
 import "root:/widgets/tools"
+
 Scope {
     Variants {
         model: Quickshell.screens
@@ -32,7 +33,6 @@ Scope {
             color: "#90" + Colors.background.slice(1)
             implicitWidth: 50
 
-            
             Column {
                 id: column
                 anchors.fill: parent
@@ -54,20 +54,17 @@ Scope {
                         anchors.centerIn: parent
                     }
                 }
-                        
+
                 Item {
                     id: toolie
                     anchors {
                         top: archie.bottom
-
                     }
 
-                       
                     Tools {}
                     implicitWidth: parent.width
                     implicitHeight: parent.width
-                     
-                }    
+                }
 
                 // Clock
                 Item {
@@ -92,7 +89,7 @@ Scope {
                     anchors.bottomMargin: margin
 
                     Test {}
-                }  
+                }
                 // Battery
                 Item {
                     id: batterie
@@ -101,8 +98,6 @@ Scope {
                     anchors.bottom: loggie.top
                     Battery {}
                 }
-                
-                  
 
                 Item {
                     id: loggie
@@ -111,19 +106,31 @@ Scope {
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: margin
 
+                    property bool show: false
+                    property bool toggled: false
+
                     Logout {
                         id: wlogout
                     }
                     Text {
+                        id: textie
                         text: ""
                         anchors.centerIn: parent
-                        color: Colors.primary
+                        color: loggie.show ? Colors.foreground : Colors.primary
                         font.pointSize: 13
+
+                        Behavior on color {
+                            ColorAnimation {
+                                duration: 150
+                                easing.type: Easing.OutInCubic
+                            }
+                        }
                     }
 
-                    property bool show: false
-
                     MouseArea {
+                        hoverEnabled: true
+                        onEntered: textie.color = Colors.foreground
+                        onExited: textie.color = Colors.primary
                         anchors.fill: parent
                         onClicked: {
                             loggie.show = true;
@@ -131,8 +138,7 @@ Scope {
                         }
                     }
                 }
-                    
-               }
+            }
         }
     }
 }

@@ -13,10 +13,8 @@ with pkgs; [
 
   # >>MUSIC<<
   easyeffects
-  youtube-music
   cava
-  spicetify-cli
-
+  spotify
   # >>NAVIGATION<<
   fzf
   ulauncher
@@ -37,9 +35,9 @@ with pkgs; [
   gnome-software
 
   # >>IDK<<
-  vesktop
   equibop
   swaynotificationcenter
+  inkscape
 
   # >>WALLPAPER & CUSTOMIZATION & SCREENUTILS<<
   hyprshot

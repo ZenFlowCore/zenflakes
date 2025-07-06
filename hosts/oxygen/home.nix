@@ -31,10 +31,10 @@ in {
       name = "Volantes";
       size = 20;
     };
+    desktop.apps.obsidian.enable = true;
     terminal.tmux.enable = true;
     terminal.kitty.kitty.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
-
   };
 
   programs.home-manager.enable = true;

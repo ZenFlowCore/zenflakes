@@ -15,8 +15,13 @@ Singleton {
 
   }
 
+  readonly property string date: {
+    clock.date, "ddd MMM d AP t yy" 
+  }
+
   SystemClock {
     id: clock
     precision: SystemClock.Seconds
   }
 }
+
