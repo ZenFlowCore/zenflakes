@@ -8,7 +8,8 @@ with pkgs; [
   rustup
   ghostty
   gcc
-  nodejs_24
+  nodejs
+  vue
 
   # >>MUSIC<<
   easyeffects
