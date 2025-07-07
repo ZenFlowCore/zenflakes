@@ -7,10 +7,8 @@ with pkgs; [
   # >>DEV<<
   rustup
   ghostty
-  kitty
-  foot
   gcc
-  figma-linux
+  nodejs_24
 
   # >>MUSIC<<
   easyeffects
