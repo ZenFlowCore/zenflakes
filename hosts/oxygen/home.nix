@@ -33,6 +33,7 @@ in {
     };
     desktop.apps.obsidian.enable = true;
     terminal.tmux.enable = true;
+    terminal.foot.foot.enable = true;
     terminal.kitty.kitty.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
   };
