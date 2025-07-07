@@ -10,11 +10,13 @@ with pkgs; [
   kitty
   foot
   gcc
+  figma-linux
 
   # >>MUSIC<<
   easyeffects
   cava
   spotify
+
   # >>NAVIGATION<<
   fzf
   ulauncher
@@ -23,6 +25,7 @@ with pkgs; [
   wofi
   eza
   nautilus
+
   # >>SYSTEM UTILITIES<<
   wget
   mission-center

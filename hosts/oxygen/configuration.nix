@@ -28,7 +28,15 @@
     xwayland.enable = true;
   };
 
-  xdg.portal.enable = true;
+  programs.niri.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    config.common.default = "gtk";
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+
+  };
 
   environment.sessionVariables = {
 

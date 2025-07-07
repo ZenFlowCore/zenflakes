@@ -1,9 +1,9 @@
 { pkgs, config, inputs, lib, ... }:
 
 with lib;
-let cfg = config.zen.home.modules.desktop.apps.obsidian;
+let cfg = config.zen.modules.desktop.apps.obsidian;
 in {
-  options.zen.home.modules.desktop.apps.obsidian = {
+  options.zen.modules.desktop.apps.obsidian = {
     enable = mkEnableOption "To Enable or not to enable";
   };
 

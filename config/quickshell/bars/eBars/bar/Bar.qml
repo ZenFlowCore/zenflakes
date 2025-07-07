@@ -16,23 +16,7 @@ import "root:/widgets/tools"
 Scope {
     Variants {
         model: Quickshell.screens
-        PanelWindow {
-            id: bar
-            property var modelData
-            property real margin: 15
-            property real base_margin: 20
-            property bool isSoleBar: Quickshell.screens.length == 1
-            screen: modelData
-
-            anchors {
-                left: true
-                top: true
-                bottom: true
-            }
-
-            color: "#90" + Colors.background.slice(1)
-            implicitWidth: 50
-
+      
             Column {
                 id: column
                 anchors.fill: parent
@@ -139,6 +123,5 @@ Scope {
                     }
                 }
             }
-        }
     }
 }

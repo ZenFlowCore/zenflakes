@@ -20,7 +20,6 @@ Scope {
   
   Right_Bar {}
 
-  Border {}
 
   Connections {
     function onReloadCompleted() {
