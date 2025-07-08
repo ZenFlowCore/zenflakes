@@ -58,7 +58,7 @@ PanelWindow {
             
             geomRect.visible = false
             const geometry = `${geomRect.anchor1X},${geomRect.anchor1Y} ${geomRect.anchorDx}x${geomRect.anchorDy}`
-            myCommand.command = ["grim", "-g", geometry, "/tmp/screenshot.png"]
+            myCommand.command = ["grim", "-g", geometry, "/home/zen/screenshot.png"]
             myCommand.text = geometry
             myCommand.running = true
         }

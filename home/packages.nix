@@ -10,11 +10,13 @@ with pkgs; [
   gcc
   nodejs
   vue
+  yarn
+  bun
+  vscode
 
   # >>MUSIC<<
   easyeffects
   cava
-  spotify
 
   # >>NAVIGATION<<
   fzf
