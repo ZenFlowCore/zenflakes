@@ -21,6 +21,13 @@
         # arise, REMEMBER WHO YOU ARE! >>he did not say that<<
       end
 
+      function gp
+        git add .
+        git commit -m $argv[1]
+        git push
+      end
+
+
       abbr --add cnix sudo nvim ~/zenflakes/hosts/default/configuration.nix
       abbr --add upgrd sudo nixos-rebuild switch --flake ~/zenflakes/#default
       abbr --add c clear

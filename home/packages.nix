@@ -13,6 +13,7 @@ with pkgs; [
   yarn
   bun
   vscode
+  gnome-clocks
 
   # >>MUSIC<<
   easyeffects

@@ -14,7 +14,6 @@ import "root:/widgets/styles"
 import "root:/widgets/tools"
 
 Scope {
-    Variants {
         model: Quickshell.screens
       
             Column {
@@ -124,4 +123,3 @@ Scope {
                 }
             }
     }
-}

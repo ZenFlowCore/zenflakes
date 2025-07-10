@@ -32,9 +32,9 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = "gtk";
+    config.common.default = "kde";
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
 
   };
 
