@@ -14,7 +14,6 @@ import "root:/widgets/styles"
 import "root:/widgets/tools"
 
 Scope {
-        model: Quickshell.screens
       
             Column {
                 id: column
