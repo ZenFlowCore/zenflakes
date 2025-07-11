@@ -14,6 +14,7 @@ with pkgs; [
   bun
   vscode
   lua-language-server
+  rust-analyzer
   gnome-clocks
 
   # >>MUSIC<<
