@@ -26,6 +26,12 @@
         git commit -m $argv[1]
         git push
       end
+      function hm 
+      	git add ~/zenflakes/ 
+	git commit -am $argv[1]
+	git push
+      	hm home-manager switch --flake ~/zenflakes/
+      end
 
 
       abbr --add cnix sudo nvim ~/zenflakes/hosts/default/configuration.nix
@@ -36,7 +42,9 @@
       abbr --add v nvim
       abbr --add ls exa --oneline --reverse --sort=type
       abbr --add srcy z src
-      abbr --add hm home-manager switch --flake ~/zenflakes/
+      abbr --add astrov NVIM_APPNAME=astronvim_v5 nvim
+      abbr --add kick NVIM_APPNAME=kick nvim
+      abbr --add chad NVIM_APPNAME=nvChad nvim
     '';
   };
 }

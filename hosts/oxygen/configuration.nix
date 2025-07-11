@@ -32,9 +32,9 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = "kde";
+    config.common.default = "gtk";
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
 
   };
 
@@ -150,12 +150,8 @@
   services.auto-cpufreq = { enable = true; };
 
   # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [
-    neovim
-    ly
-    home-manager
-    inputs.zen-browser.packages.x86_64-linux.default
-  ];
+  environment.systemPackages = with pkgs; [ neovim ly home-manager     
+  inputs.zen-browser.packages."${system}".default ];
 
   system.stateVersion = "25.05";
 

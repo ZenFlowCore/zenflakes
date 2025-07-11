@@ -14,7 +14,6 @@ with pkgs; [
   bun
   vscode
   gnome-clocks
-  notion-app
   # >>MUSIC<<
   easyeffects
   cava
