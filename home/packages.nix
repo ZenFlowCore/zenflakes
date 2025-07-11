@@ -13,7 +13,9 @@ with pkgs; [
   yarn
   bun
   vscode
+  lua-language-server
   gnome-clocks
+
   # >>MUSIC<<
   easyeffects
   cava
