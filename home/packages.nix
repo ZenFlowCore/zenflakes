@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
+
 with pkgs; [
   # >>"Hello, world!" when run.<<
   hello
@@ -14,7 +15,8 @@ with pkgs; [
   bun
   vscode
   lua-language-server
-  rust-analyzer
+  go
+  opencode
   gnome-clocks
 
   # >>MUSIC<<
