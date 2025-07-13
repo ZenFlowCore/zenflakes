@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./zed-editor.nix
-  ];
+  imports = [ ];
 }
