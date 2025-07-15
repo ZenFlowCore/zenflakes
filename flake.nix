@@ -14,8 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    matugen.url = "github:/InioX/Matugen";
-
+    matugen = { url = "github:/InioX/Matugen"; };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
