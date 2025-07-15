@@ -33,13 +33,13 @@ in {
     };
     desktop.apps.obsidian.enable = true;
     development.zed-editor.enable = false;
-    terminal.tmux.enable = true;
-    terminal.helix.enable = true;
-    terminal.zellij.enable = true;
+    terminal.tmux.tmux.enable = true;
     terminal.foot.foot.enable = true;
     terminal.kitty.kitty.enable = true;
+    terminal.helix.helix.enable = true;
+    terminal.zellij.zellij.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
-    
+
   };
 
   programs.home-manager.enable = true;

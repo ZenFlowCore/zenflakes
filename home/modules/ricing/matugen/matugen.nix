@@ -30,14 +30,37 @@ in {
         set = true;
       };
 
-      templates = { };
-
-    };
-    xdg.configFile = {
-      "matugen" = {
-        source =
-          config.lib.file.mkOutOfStoreSymlink "${config.zen}/config/matugen";
+      templates = {
+        yazi = {
+          input_path = "${./templates/yazi-colors.toml}";
+          output_path = "~/yazi-colors.toml";
+        };
+        cava = {
+          input_path = "${./templates/cava-colors}";
+          output_path = "~/cava-colors";
+        };
+        quickshell = {
+          input_path = "${./templates/quickshell-colors.js}";
+          output_path = "~/quickshell-colors.js";
+        };
+        spicetify = {
+          input_path = "${./templates/spicetify-colors.ini}";
+          output_path = "~/spicetify-colors.ini";
+        };
+        oh-my-posh = {
+          input_path = "${./templates/oh-my-posh.toml}";
+          output_path = "~/oh-my-posh.toml";
+        };
+        foot = {
+          input_path = "${./templates/foot-colors.ini}";
+          output_path = "~/foot-colors.ini";
+        };
+        kitty = {
+          input_path = "${./templates/kitty-colors.conf}";
+          output_path = "~/kitty-colors.conf";
+        };
       };
+
     };
   };
 }

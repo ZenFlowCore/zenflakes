@@ -18,6 +18,7 @@ with pkgs; [
   astro-language-server
   basilk
   tre-command
+  wl-clipboard-rs
   go
   python3
   opencode
