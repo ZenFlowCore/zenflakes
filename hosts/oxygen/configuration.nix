@@ -40,6 +40,8 @@
 
   programs.niri.enable = true;
 
+programs.mpv.enable = true;
+
   xdg.portal = {
     enable = true;
     config.common.default = "gtk";

@@ -16,6 +16,8 @@ with pkgs; [
   vscode
   lua-language-server
   astro-language-server
+  basilk
+  tre-command
   go
   python3
   opencode
