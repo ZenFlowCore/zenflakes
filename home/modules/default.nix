@@ -16,5 +16,6 @@
     ./shell
     ./navigation
     ./utilities
+    ./ricing
   ];
 }

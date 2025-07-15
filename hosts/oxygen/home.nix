@@ -18,6 +18,7 @@ in {
     allowImages = true;
   };
   zen.modules = {
+    ricing.matugen.matugen.enable = true;
     desktop.quickshell.enable = true;
     desktop.music.cava.cava = {
       enable = true;

@@ -60,7 +60,6 @@ with pkgs; [
   fastfetch
   swww
   slurp
-  matugen
   clock-rs
   gpu-screen-recorder
 
