@@ -3,9 +3,10 @@
 with lib;
 let
   # This is for convenience (see the config block)
-  cfg = config.zen.modules.terminal.tmux;
+  cfg = config.zen.modules.terminal.tmux.tmux;
+
 in {
-  options.zen.modules.terminal.tmux = {
+  options.zen.modules.terminal.tmux.tmux = {
     enable = mkEnableOption "Description";
   };
 

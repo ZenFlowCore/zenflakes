@@ -3,9 +3,9 @@
 with lib;
 let
   # This is for convenience (see the config block)
-  cfg = config.zen.modules.terminal.zellij;
+  cfg = config.zen.modules.terminal.zellij.zellij;
 in {
-  options.zen.modules.terminal.zellij = {
+  options.zen.modules.terminal.zellij.zellij = {
     enable = mkEnableOption "Description";
   };
 

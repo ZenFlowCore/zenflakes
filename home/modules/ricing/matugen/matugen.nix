@@ -33,31 +33,32 @@ in {
       templates = {
         yazi = {
           input_path = "${./templates/yazi-colors.toml}";
-          output_path = "~/yazi-colors.toml";
+          output_path = "../../terminal/yazi/yazi-colors.toml";
         };
         cava = {
           input_path = "${./templates/cava-colors}";
-          output_path = "~/cava-colors";
+          output_path = "../../desktop/music/cava/themes/cava-colors";
         };
         quickshell = {
           input_path = "${./templates/quickshell-colors.js}";
-          output_path = "~/quickshell-colors.js";
+          output_path = "../../../../config/quickshell/colors.js";
         };
-        spicetify = {
-          input_path = "${./templates/spicetify-colors.ini}";
-          output_path = "~/spicetify-colors.ini";
-        };
+        /* spicetify = {
+             input_path = "${./templates/spicetify-colors.ini}";
+             output_path = "/spicetify-colors.ini";
+           };
+        */
         oh-my-posh = {
           input_path = "${./templates/oh-my-posh.toml}";
-          output_path = "~/oh-my-posh.toml";
+          output_path = "../../terminal/oh-my-posh/theme.toml";
         };
         foot = {
           input_path = "${./templates/foot-colors.ini}";
-          output_path = "~/foot-colors.ini";
+          output_path = "../../terminal/foot/themes/foot-colors.ini";
         };
         kitty = {
           input_path = "${./templates/kitty-colors.conf}";
-          output_path = "~/kitty-colors.conf";
+          output_path = "../../terminal/kitty/current-theme.conf";
         };
       };
 
