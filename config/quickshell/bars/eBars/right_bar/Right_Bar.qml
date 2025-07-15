@@ -28,35 +28,14 @@ Scope {
             }
 
             color: "#90" + Colors.background.slice(1)
-            implicitWidth: 5
+            implicitWidth: 40
 
             
             Column {
                 id: column
                 anchors.fill: parent
                 spacing: 10
-
-                
-
-               
-                
-                // Test
-                Item {
-
-                    Rectangle {
-                        color: "#fff"
-                        width: parent.width
-                        height: parent.height
-                    }
-
-                    implicitWidth: parent.width
-                    implicitHeight: 100
-                    anchors.bottom: batterie.top
-                    anchors.bottomMargin: margin
-
-                    Test {}
-                }  
-                // Battery
+               // Battery
                 Item {
                     id: batterie
                     implicitHeight: 100
@@ -70,11 +49,6 @@ Scope {
 
                 Item {
 
-                    Rectangle {
-                        implicitWidth: parent.width
-                        implicitHeight: 20
-                        color: "#fff"
-                    }
 
                     id: loggie
                     implicitWidth: parent.width

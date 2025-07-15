@@ -1,6 +1,5 @@
 { pkgs, ... }:
 
-
 with pkgs; [
   # >>"Hello, world!" when run.<<
   hello
@@ -9,16 +8,20 @@ with pkgs; [
   rustup
   ghostty
   gcc
+  ruby
   nodejs
   vue
   yarn
   bun
   vscode
   lua-language-server
+  astro-language-server
   go
+  python3
   opencode
   gnome-clocks
-
+  zed-editor
+  gnome-calculator
   # >>MUSIC<<
   easyeffects
   cava

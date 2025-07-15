@@ -23,6 +23,8 @@ in {
         "nu"
         "qml"
       ];
+
+      userSettings = { };
     };
 
   };

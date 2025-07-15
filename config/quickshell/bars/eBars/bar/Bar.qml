@@ -14,111 +14,111 @@ import "root:/widgets/styles"
 import "root:/widgets/tools"
 
 Scope {
-      
-            Column {
-                id: column
-                anchors.fill: parent
-                spacing: 10
 
-                // Arch
-                Item {
-                    id: archie
-                    implicitHeight: parent.width
-                    anchors.topMargin: margin
-                    implicitWidth: parent.width
-                    anchors.top: parent.top
-                    anchors.bottom: clockie
-                    Text {
-                        text: ""
-                        // rotation: 270
-                        font.pointSize: 15
-                        color: Colors.primary
-                        anchors.centerIn: parent
-                    }
-                }
+    Column {
+        id: column
+        anchors.fill: parent
+        spacing: 10
 
-                Item {
-                    id: toolie
-                    anchors {
-                        top: archie.bottom
-                    }
+        // Arch
+        Item {
+            id: archie
+            implicitHeight: parent.width
+            anchors.topMargin: margin
+            implicitWidth: parent.width
+            anchors.top: parent.top
+            anchors.bottom: clockie
+            Text {
+                text: ""
+                // rotation: 270
+                font.pointSize: 15
+                color: Colors.primary
+                anchors.centerIn: parent
+            }
+        }
 
-                    Tools {}
-                    implicitWidth: parent.width
-                    implicitHeight: parent.width
-                }
+        Item {
+            id: toolie
+            anchors {
+                top: archie.bottom
+            }
 
-                // Clock
-                Item {
-                    id: clockie
-                    anchors.centerIn: parent
-                    Clock {}
-                }
-                // Workspace
-                Item {
-                    id: workies
-                    anchors.bottom: loggie.top
-                    anchors.top: clockie.bottom
-                    anchors.right: parent.right
-                    Workspace {}
-                }
-                // Test
-                Item {
+            Tools {}
+            implicitWidth: parent.width
+            implicitHeight: parent.width
+        }
 
-                    implicitWidth: parent.width
-                    implicitHeight: parent.width
-                    anchors.bottom: batterie.top
-                    anchors.bottomMargin: margin
+        // Clock
+        Item {
+            id: clockie
+            anchors.centerIn: parent
+            Clock {}
+        }
+        // Workspace
+        Item {
+            id: workies
+            anchors.bottom: loggie.top
+            anchors.top: clockie.bottom
+            anchors.right: parent.right
+            Workspace {}
+        }
+        // Test
+        Item {
 
-                    Test {}
-                }
-                // Battery
-                Item {
-                    id: batterie
-                    implicitHeight: parent.width
-                    implicitWidth: parent.width
-                    anchors.bottom: loggie.top
-                    Battery {}
-                }
+            implicitWidth: parent.width
+            implicitHeight: parent.width
+            anchors.bottom: batterie.top
+            anchors.bottomMargin: margin
 
-                Item {
-                    id: loggie
-                    implicitWidth: parent.width
-                    implicitHeight: parent.width
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: margin
+            Test {}
+        }
+        // Battery
+        Item {
+            id: batterie
+            implicitHeight: parent.width
+            implicitWidth: parent.width
+            anchors.bottom: loggie.top
+            Battery {}
+        }
 
-                    property bool show: false
-                    property bool toggled: false
+        Item {
+            id: loggie
+            implicitWidth: parent.width
+            implicitHeight: parent.width
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: margin
 
-                    Logout {
-                        id: wlogout
-                    }
-                    Text {
-                        id: textie
-                        text: ""
-                        anchors.centerIn: parent
-                        color: loggie.show ? Colors.foreground : Colors.primary
-                        font.pointSize: 13
+            property bool show: false
+            property bool toggled: false
 
-                        Behavior on color {
-                            ColorAnimation {
-                                duration: 150
-                                easing.type: Easing.OutInCubic
-                            }
-                        }
-                    }
+            Logout {
+                id: wlogout
+            }
+            Text {
+                id: textie
+                text: ""
+                anchors.centerIn: parent
+                color: loggie.show ? Colors.foreground : Colors.primary
+                font.pointSize: 13
 
-                    MouseArea {
-                        hoverEnabled: true
-                        onEntered: textie.color = Colors.foreground
-                        onExited: textie.color = Colors.primary
-                        anchors.fill: parent
-                        onClicked: {
-                            loggie.show = true;
-                            console.log("gud");
-                        }
+                Behavior on color {
+                    ColorAnimation {
+                        duration: 150
+                        easing.type: Easing.OutInCubic
                     }
                 }
             }
+
+            MouseArea {
+                hoverEnabled: true
+                onEntered: textie.color = Colors.foreground
+                onExited: textie.color = Colors.primary
+                anchors.fill: parent
+                onClicked: {
+                    loggie.show = true;
+                    console.log("gud");
+                }
+            }
+        }
     }
+}

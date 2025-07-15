@@ -16,6 +16,7 @@ Item {
     }
     property bool show: false
 
+
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
