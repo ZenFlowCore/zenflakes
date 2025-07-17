@@ -21,7 +21,8 @@
   programs.nix-ld.libraries = with pkgs; [
 
     # Add any missing dynamic libraries for unpackaged programs
-
+    brotli
+    glib
     # here, NOT in environment.systemPackages
 
   ];
@@ -39,8 +40,6 @@
   };
 
   programs.niri.enable = true;
-
-programs.mpv.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -162,8 +161,13 @@ programs.mpv.enable = true;
   services.auto-cpufreq = { enable = true; };
 
   # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [ neovim ly home-manager     
-  inputs.zen-browser.packages."${system}".default ];
+  environment.systemPackages = with pkgs; [
+    neovim
+    ly
+    home-manager
+    inputs.matugen.packages.${system}.default
+    inputs.zen-browser.packages."${system}".default
+  ];
 
   system.stateVersion = "25.05";
 

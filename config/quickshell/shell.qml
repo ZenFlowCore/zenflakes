@@ -3,7 +3,7 @@ import Quickshell.Io
 import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
-import Quickshell.Wayland 
+import Quickshell.Wayland
 import "colors.js" as Colors
 import "widgets"
 import "bars/eBars/right_bar"
@@ -12,26 +12,24 @@ import "widgets/audio"
 import "widgets/bar"
 import "widgets/right_bar"
 import "widgets/border"
-Scope { 
-    
-  Audio {}
 
-  Bar {}
-  
-  Right_Bar {}
+Scope {
 
+    Audio {}
 
-  Connections {
-    function onReloadCompleted() {
-      Quickshell.inhibitReloadPopup();
+    Bar {}
+
+    Right_Bar {}
+
+    Connections {
+        function onReloadCompleted() {
+            Quickshell.inhibitReloadPopup();
+        }
+
+        function onReloadFailed() {
+            Quickshell.inhibitReloadPopup();
+        }
+
+        target: Quickshell
     }
-
-    function onReloadFailed() {
-      Quickshell.inhibitReloadPopup();
-    }
-
-    target: Quickshell
-  }
-
 }
-

@@ -39,7 +39,7 @@
             abbr --add c clear
             abbr --add clr clear
             abbr --add ff fastfetch
-            abbr --add v NVIM_APPNAME=astrov nvim
+            abbr --add v NVIM_APPNAME=kick nvim
             abbr --add ls exa --oneline --reverse --sort=type
             abbr --add srcy z src
             abbr --add astrov NVIM_APPNAME=astronvim_v5 nvim

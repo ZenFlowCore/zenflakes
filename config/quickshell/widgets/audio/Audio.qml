@@ -187,11 +187,15 @@ Scope {
 
                             // Show volume level or hide if muted
                             height: {
+                                var volume = Pipewire.defaultAudioSink?.audio.volume ?? 0;
                                 var muted = Pipewire.defaultAudioSink?.audio.muted ?? false;
                                 if (muted) {
                                     return 0; // No volume bar when muted
                                 }
-                                return parent.height * (Pipewire.defaultAudioSink?.audio.volume ?? 0);
+                                if (volume >= 1) { volume = 1}
+                                return parent.height * volume;
+
+
                             }
 
                             Behavior on height {

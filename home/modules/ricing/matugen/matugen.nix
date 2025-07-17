@@ -6,8 +6,7 @@
   programs.matugen = {
     enable = true;
 
-    config.reload = true;
-    config.wallpaper = {
+    wallpaper = {
       command = "swww";
       arguments = [
         "img"
@@ -36,11 +35,7 @@
         input_path = "./templates/quickshell-colors.js";
         output_path = "../../../../config/quickshell/colors.js";
       };
-      /* spicetify = {
-             input_path = "${./templates/spicetify-colors.ini}";
-             output_path = "/spicetify-colors.ini";
-           };
-      */
+
       oh-my-posh = {
         input_path = "./templates/oh-my-posh.toml";
         output_path = "../../terminal/oh-my-posh/theme.toml";
@@ -54,5 +49,6 @@
         output_path = "../../terminal/kitty/current-theme.conf";
       };
     };
+
   };
 }

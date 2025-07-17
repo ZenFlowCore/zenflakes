@@ -12,6 +12,7 @@ with pkgs; [
   nodejs
   vue
   yarn
+  lua
   bun
   vscode
   lua-language-server
@@ -20,6 +21,7 @@ with pkgs; [
   tre-command
   wl-clipboard-rs
   go
+
   python3
   opencode
   gnome-clocks
@@ -59,6 +61,7 @@ with pkgs; [
   grim
   fastfetch
   swww
+  hyprlock
   slurp
   clock-rs
   gpu-screen-recorder

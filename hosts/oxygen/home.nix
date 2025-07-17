@@ -10,7 +10,9 @@ in {
   imports = [
     # Programs!
     ../../home/modules/default.nix
+    ../../home/modules/ricing/matugen/matugen.nix
 
+    inputs.matugen.nixosModules.default
   ];
   home.packages = flows;
   services.cliphist = {
@@ -18,7 +20,6 @@ in {
     allowImages = true;
   };
   zen.modules = {
-    ricing.matugen.matugen.enable = true;
     desktop.quickshell.enable = true;
     desktop.music.cava.cava = {
       enable = true;
