@@ -263,15 +263,15 @@
       "locked": {
         "lastModified": 1752780466,
         "narHash": "sha256-o3uaEPW7Q9IN+iGNbm3iIFzZd3eQje+HYNwnZdpxvW4=",
-        "ref": "refs/heads/master",
+        "owner": "outfoxxed",
+        "repo": "quickshell",
         "rev": "115d6717a85d1b2246f82479d1aacca181893014",
-        "revCount": 643,
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "type": "github"
       }
     },
     "root": {

@@ -4,7 +4,7 @@ import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Widgets
 import "root:/colors.js" as Colors
-import "root:/widgets/bar"
+
 Scope {
     id: root
 
@@ -50,6 +50,7 @@ Scope {
             implicitWidth: 60
             implicitHeight: 200
             color: "transparent"
+            exclusiveZone: 0
             mask: Region {}
             Rectangle {
                 anchors.fill: parent
@@ -192,10 +193,10 @@ Scope {
                                 if (muted) {
                                     return 0; // No volume bar when muted
                                 }
-                                if (volume >= 1) { volume = 1}
+                                if (volume >= 1) {
+                                    volume = 1;
+                                }
                                 return parent.height * volume;
-
-
                             }
 
                             Behavior on height {

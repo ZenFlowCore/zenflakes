@@ -11,22 +11,21 @@ PanelWindow {
     id: appLauncherPanel
     implicitWidth: 460
     implicitHeight: 640
-    color: "#ffffff"
-    visible: true
+    color: "transparent"
+    visible: false
     WlrLayershell.exclusionMode: ExclusionMode.Ignore
     WlrLayershell.keyboardFocus: visible ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
     screen: (typeof modelData !== 'undefined' ? modelData : null)
     property bool shouldBeVisible: false
 
     anchors.top: true
-    margins.top: 36
     Component.onCompleted: {
-        showAt()
+        showAt();
     }
     function showAt() {
         visible = true;
         shouldBeVisible = true;
-        searchField.forceActiveFocus()
+        searchField.forceActiveFocus();
         root.selectedIndex = 0;
         root.appModel = DesktopEntries.applications.values;
         root.updateFilter();
@@ -43,7 +42,6 @@ PanelWindow {
         width: 400
         height: 640
         x: (parent.width - width) / 2
-        color: Theme.backgroundPrimary
         bottomLeftRadius: 28
         bottomRightRadius: 28
 
@@ -53,11 +51,17 @@ PanelWindow {
         property int targetY: (parent.height - height) / 2
         y: appLauncherPanel.shouldBeVisible ? targetY : -height
         Behavior on y {
-            NumberAnimation { duration: 300; easing.type: Easing.OutCubic }
+            NumberAnimation {
+                duration: 300
+                easing.type: Easing.OutCubic
+            }
         }
         scale: appLauncherPanel.shouldBeVisible ? 1 : 0
         Behavior on scale {
-            NumberAnimation { duration: 200; easing.type: Easing.InOutCubic }
+            NumberAnimation {
+                duration: 200
+                easing.type: Easing.InOutCubic
+            }
         }
         onScaleChanged: {
             if (scale === 0 && !appLauncherPanel.shouldBeVisible) {
@@ -95,12 +99,16 @@ PanelWindow {
                 }
             }
             if (!query || query.startsWith("=")) {
-                results = results.concat(apps.sort(function(a, b) {
+                results = results.concat(apps.sort(function (a, b) {
                     return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
                 }));
             } else {
-                var fuzzyResults = Fuzzysort.go(query, apps, { keys: ["name", "comment", "genericName"] });
-                results = results.concat(fuzzyResults.map(function(r) { return r.obj; }));
+                var fuzzyResults = Fuzzysort.go(query, apps, {
+                    keys: ["name", "comment", "genericName"]
+                });
+                results = results.concat(fuzzyResults.map(function (r) {
+                    return r.obj;
+                }));
             }
             root.filteredApps = results;
             root.selectedIndex = 0;
@@ -121,13 +129,9 @@ PanelWindow {
             var modelData = filteredApps[selectedIndex];
 
             if (modelData.isCalculator) {
-                Qt.callLater(function() {
+                Qt.callLater(function () {
                     Quickshell.clipboardText = String(modelData.result);
-                    Quickshell.execDetached([
-                        "notify-send",
-                        "Calculator Result",
-                        `${modelData.expr} = ${modelData.result} (copied to clipboard)`
-                    ]);
+                    Quickshell.execDetached(["notify-send", "Calculator Result", `${modelData.expr} = ${modelData.result} (copied to clipboard)`]);
                 });
             } else if (modelData.execute) {
                 modelData.execute();
@@ -142,7 +146,7 @@ PanelWindow {
             appLauncherPanel.hidePanel();
             searchField.text = "";
         }
-        
+
         Component.onCompleted: updateFilter()
 
         ColumnLayout {
@@ -156,11 +160,9 @@ PanelWindow {
             // Search Bar
             Rectangle {
                 id: searchBar
-                color: Theme.surfaceVariant
                 radius: 22
                 height: 48
                 Layout.fillWidth: true
-                border.color: searchField.activeFocus ? Theme.accentPrimary : Theme.outline
                 border.width: searchField.activeFocus ? 2 : 1
 
                 RowLayout {
@@ -173,24 +175,16 @@ PanelWindow {
                     Text {
                         text: "search"
                         font.family: "Material Symbols Outlined"
-                        font.pixelSize: Theme.fontSizeHeader
-                        color: searchField.activeFocus ? Theme.accentPrimary : Theme.textSecondary
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignVCenter
                     }
                     TextField {
                         id: searchField
                         placeholderText: "Search apps..."
-                        color: Theme.textPrimary
-                        placeholderTextColor: Theme.textSecondary
                         background: null
-                        font.family: Theme.fontFamily
-                        font.pixelSize: Theme.fontSizeBody
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignVCenter
                         onTextChanged: root.updateFilter()
-                        selectedTextColor: Theme.onAccent
-                        selectionColor: Theme.accentPrimary
                         padding: 0
                         verticalAlignment: TextInput.AlignVCenter
                         leftPadding: 0
@@ -198,8 +192,6 @@ PanelWindow {
                         topPadding: 0
                         bottomPadding: 0
                         font.bold: true
-                        Component.onCompleted: contentItem.cursorColor = Theme.textPrimary
-                        onActiveFocusChanged: contentItem.cursorColor = Theme.textPrimary
 
                         Keys.onDownPressed: root.selectNext()
                         Keys.onUpPressed: root.selectPrev()
@@ -208,13 +200,20 @@ PanelWindow {
                         Keys.onEscapePressed: appLauncherPanel.hidePanel()
                     }
                 }
-                Behavior on border.color { ColorAnimation { duration: 120 } }
-                Behavior on border.width { NumberAnimation { duration: 120 } }
+                Behavior on border.color {
+                    ColorAnimation {
+                        duration: 120
+                    }
+                }
+                Behavior on border.width {
+                    NumberAnimation {
+                        duration: 120
+                    }
+                }
             }
 
             // App List Card
             Rectangle {
-                color: Theme.surface
                 radius: 20
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -246,12 +245,23 @@ PanelWindow {
 
                         Rectangle {
                             anchors.fill: parent
-                       
-                            border.color: hovered || isSelected ? Theme.accentPrimary : "transparent"
+
                             border.width: hovered || isSelected ? 2 : 0
-                            Behavior on color { ColorAnimation { duration: 120 } }
-                            Behavior on border.color { ColorAnimation { duration: 120 } }
-                            Behavior on border.width { NumberAnimation { duration: 120 } }
+                            Behavior on color {
+                                ColorAnimation {
+                                    duration: 120
+                                }
+                            }
+                            Behavior on border.color {
+                                ColorAnimation {
+                                    duration: 120
+                                }
+                            }
+                            Behavior on border.width {
+                                NumberAnimation {
+                                    duration: 120
+                                }
+                            }
                         }
 
                         RowLayout {
@@ -260,7 +270,8 @@ PanelWindow {
                             anchors.rightMargin: 10
                             spacing: 10
                             Item {
-                                width: 28; height: 28
+                                width: 28
+                                height: 28
                                 property bool iconLoaded: !modelData.isCalculator && iconImg.status === Image.Ready && iconImg.source !== "" && iconImg.status !== Image.Error
                                 Image {
                                     id: iconImg
@@ -277,8 +288,6 @@ PanelWindow {
                                     visible: !modelData.isCalculator && !parent.iconLoaded
                                     text: "broken_image"
                                     font.family: "Material Symbols Outlined"
-                                    font.pixelSize: Theme.fontSizeHeader
-                                    color: Theme.accentPrimary
                                 }
                             }
 
@@ -287,20 +296,13 @@ PanelWindow {
                                 spacing: 1
                                 Text {
                                     text: modelData.name
-                                    color: hovered || isSelected ? Theme.onAccent : Theme.textPrimary
-                                    font.family: Theme.fontFamily
-                                    font.pixelSize: Theme.fontSizeSmall
                                     font.bold: hovered || isSelected
                                     verticalAlignment: Text.AlignVCenter
                                     elide: Text.ElideRight
                                     Layout.fillWidth: true
                                 }
                                 Text {
-                                    text: modelData.isCalculator ? (modelData.expr + " = " + modelData.result)
-                                        : (modelData.comment || modelData.genericName || "No description available")
-                                    color: hovered || isSelected ? Theme.onAccent : Theme.textSecondary
-                                    font.family: Theme.fontFamily
-                                    font.pixelSize: Theme.fontSizeCaption
+                                    text: modelData.isCalculator ? (modelData.expr + " = " + modelData.result) : (modelData.comment || modelData.genericName || "No description available")
                                     font.italic: !(modelData.comment || modelData.genericName)
                                     opacity: (modelData.comment || modelData.genericName) ? 1.0 : 0.6
                                     elide: Text.ElideRight
@@ -308,27 +310,18 @@ PanelWindow {
                                 }
                             }
 
-                            Item { Layout.fillWidth: true }
-                            Text {
-                                text: modelData.isCalculator ? "content_copy" : "chevron_right"
-                                font.family: "Material Symbols Outlined"
-                                font.pixelSize: Theme.fontSizeBody
-                                color: hovered || isSelected ? Theme.onAccent : Theme.textSecondary
-                                verticalAlignment: Text.AlignVCenter
+                            Item {
+                                Layout.fillWidth: true
                             }
                         }
-
-                  
 
                         MouseArea {
                             id: mouseArea
                             anchors.fill: parent
                             hoverEnabled: true
                             onClicked: {
-                            
-                                root.activateSelected()
+                                root.activateSelected();
                             }
-                      
                         }
                         Rectangle {
                             anchors.left: parent.left
@@ -342,5 +335,4 @@ PanelWindow {
             }
         }
     }
-
 }

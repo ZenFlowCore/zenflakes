@@ -34,6 +34,7 @@ in {
       size = 20;
     };
     desktop.apps.obsidian.enable = true;
+    development.vscode.enable = true;
     development.zed-editor.enable = false;
     terminal.tmux.tmux.enable = true;
     terminal.foot.foot.enable = true;

@@ -5,21 +5,15 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Wayland
 import "colors.js" as Colors
-import "widgets"
-import "bars/eBars/right_bar"
-import "bars/eBars/bar"
-import "widgets/audio"
-import "widgets/bar"
-import "widgets/right_bar"
-import "widgets/border"
+import qs.widgets.audio
+import qs.widgets.border
+import qs.bar
 
 Scope {
 
     Audio {}
 
     Bar {}
-
-    Right_Bar {}
 
     Connections {
         function onReloadCompleted() {

@@ -2,48 +2,47 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import "root:/widgets/battery"
-import "root:/widgets/clock"
-import "root:/widgets/audio"
-import "root:/widgets/workspaces"
-import "root:/widgets/logout"
-import "root:/widgets/border"
+import qs.widgets.battery
+import qs.widgets.clock
+import qs.widgets.audio
+import qs.widgets.workspaces
+import qs.widgets.logout
+import qs.widgets.border
 import "root:/colors.js" as Colors
-import "root:/widgets/test"
-import "root:/widgets/styles"
-import "root:/widgets/tools"
+import qs.widgets.test
+import qs.widgets.styles
+import qs.widgets.tools
+
 Scope {
     Variants {
         model: Quickshell.screens
         PanelWindow {
             id: bar
-            property var modelData
             property real margin: 15
             property real base_margin: 20
             property bool isSoleBar: Quickshell.screens.length == 1
-            screen: modelData
+
+            exclusiveZone: implicitWidth
 
             anchors {
-                left: true
+                right: true
                 top: true
                 bottom: true
             }
 
-            color: "#00" + Colors.background.slice(1)
-            implicitWidth: 50
-            
-            
+            color: "#90" + Colors.background.slice(1)
+            implicitWidth: 40
+
             Column {
                 id: column
                 anchors.fill: parent
                 spacing: 10
-
                 // Arch
-                StyledRect {
+                Item {
                     id: archie
-                    implicitHeight: 60
+                    implicitHeight: parent.width
                     anchors.topMargin: margin
-                    implicitWidth: 96
+                    implicitWidth: parent.width
                     anchors.top: parent.top
                     anchors.bottom: clockie
                     Text {
@@ -54,29 +53,26 @@ Scope {
                         anchors.centerIn: parent
                     }
                 }
-                        
-                StyledRect {
+
+                Item {
                     id: toolie
                     anchors {
                         top: archie.bottom
-
                     }
 
-                       
                     Tools {}
-                    implicitWidth: 96
-                    implicitHeight: 60
-                     
-                }    
+                    implicitWidth: parent.width
+                    implicitHeight: parent.width
+                }
 
                 // Clock
-                StyledRect {
+                Item {
                     id: clockie
-                    Clock {
-                    }
+                    anchors.centerIn: parent
+                    Clock {}
                 }
                 // Workspace
-                StyledRect {
+                Item {
                     id: workies
                     anchors.bottom: loggie.top
                     anchors.top: clockie.bottom
@@ -84,47 +80,56 @@ Scope {
                     Workspace {}
                 }
                 // Test
-                StyledRect {
+                Item {
 
-                    implicitWidth: 96
-                    implicitHeight: 60
+                    implicitWidth: parent.width
+                    implicitHeight: parent.width
                     anchors.bottom: batterie.top
                     anchors.bottomMargin: margin
 
                     Test {}
-                }  
+                }
                 // Battery
-                StyledRect {
+                Item {
                     id: batterie
-                    implicitHeight: 60
-                    implicitWidth: 96
+                    implicitHeight: parent.width
+                    implicitWidth: parent.width
                     anchors.bottom: loggie.top
                     Battery {}
-
                 }
-                
-                  
 
-                StyledRect {
+                Item {
                     id: loggie
-                    implicitWidth: 96
-                    implicitHeight: 60
+                    implicitWidth: parent.width
+                    implicitHeight: parent.width
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: margin
+
+                    property bool show: false
+                    property bool toggled: false
 
                     Logout {
                         id: wlogout
                     }
                     Text {
+                        id: textie
                         text: ""
                         anchors.centerIn: parent
-                        color: Colors.primary
+                        color: loggie.show ? Colors.foreground : Colors.primary
                         font.pointSize: 13
+
+                        Behavior on color {
+                            ColorAnimation {
+                                duration: 150
+                                easing.type: Easing.OutInCubic
+                            }
+                        }
                     }
 
-                    property bool show: false
-
                     MouseArea {
+                        hoverEnabled: true
+                        onEntered: textie.color = Colors.foreground
+                        onExited: textie.color = Colors.primary
                         anchors.fill: parent
                         onClicked: {
                             loggie.show = true;
@@ -132,8 +137,7 @@ Scope {
                         }
                     }
                 }
-                    
-               }
+            }
         }
     }
 }

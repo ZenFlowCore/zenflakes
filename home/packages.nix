@@ -11,10 +11,11 @@ with pkgs; [
   ruby
   nodejs
   vue
+  steam
+  gnome-font-viewer
   yarn
   lua
   bun
-  vscode
   lua-language-server
   astro-language-server
   basilk

@@ -22,3 +22,5 @@ const batt_2 =
   "/home/zen/zenflakes/config/quickshell/icons/battery/battery-vertical-2.svg";
 const batt_1 =
   "/home/zen/zenflakes/config/quickshell/icons/battery/battery-vertical-1.svg";
+const hex_fill =
+"/home/zen/zenflakes/config/quickshell/icons/common/hexagon-letter-x.svg "

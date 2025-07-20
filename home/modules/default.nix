@@ -9,7 +9,6 @@
     ./desktop
     ./development
     ./wellbeing
-    ./editors
     ./other
     ./terminal
     ./productivity
