@@ -7,6 +7,7 @@ with pkgs; [
   # >>DEV<<
   rustup
   ghostty
+  neofetch
   gcc
   ruby
   nodejs
@@ -50,6 +51,7 @@ with pkgs; [
   killall
   tree
   bat
+  hyprpicker
   gnome-software
 
   # >>IDK<<

@@ -13,6 +13,7 @@ Item {
         font.family: "JetBrainsMono Nerd Font Mono"
         font.pointSize: 13
         anchors.horizontalCenter: parent.horizontalCenter
+        color: Colors.foreground
     }
 
     property bool show: false

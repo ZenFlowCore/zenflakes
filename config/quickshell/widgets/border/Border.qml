@@ -1,9 +1,7 @@
 import Quickshell
 import QtQuick
 import QtQuick.Effects
-import "root:/widgets/bar"
 import "root:/colors.js" as Colors
-
 
 PanelWindow {
 
@@ -16,13 +14,12 @@ PanelWindow {
         right: true
     }
 
-        mask: Region {}
+    mask: Region {}
 
     color: "transparent"
 
     Item {
         anchors.fill: parent
-
 
         Rectangle {
             id: rect
@@ -55,5 +52,4 @@ PanelWindow {
             maskSpreadAtMin: 1
         }
     }
-
 }

@@ -2,20 +2,18 @@
 
 with lib;
 let cfg = config.zen.modules.development.vscode;
-in
-{
-	options.zen.modules.development.vscode = {
-		enable = mkEnableOption "TO ENABLE OR NOT TO ENABLE";
-	};
+in {
+  options.zen.modules.development.vscode = {
+    enable = mkEnableOption "TO ENABLE OR NOT TO ENABLE";
+  };
 
-	config = mkIf cfg.enable {
+  config = mkIf cfg.enable {
 
+    programs.vscode = {
+      enable = true;
 
-		programs.vscode = {
-			enable = true;
-
-			mutableExtensionsDir = true;
-		};
-	}
+      mutableExtensionsDir = true;
+    };
+  };
 
 }

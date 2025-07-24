@@ -6,11 +6,12 @@ import Quickshell.Io
 import Qt5Compat.GraphicalEffects
 import Quickshell.Wayland
 import "Fuzzysort.js" as Fuzzysort
+import "colors.js" as Colors
 
 PanelWindow {
     id: appLauncherPanel
     implicitWidth: 460
-    implicitHeight: 640
+    implicitHeight: 640 + 32
     color: "transparent"
     visible: false
     WlrLayershell.exclusionMode: ExclusionMode.Ignore
@@ -41,14 +42,14 @@ PanelWindow {
         id: root
         width: 400
         height: 640
-        x: (parent.width - width) / 2
-        bottomLeftRadius: 28
-        bottomRightRadius: 28
+        radius: 16
+
+        color: Colors.blue
 
         property var appModel: DesktopEntries.applications.values
         property var filteredApps: []
         property int selectedIndex: 0
-        property int targetY: (parent.height - height) / 2
+        property int targetY: (parent.height - height) / 2 + 16
         y: appLauncherPanel.shouldBeVisible ? targetY : -height
         Behavior on y {
             NumberAnimation {

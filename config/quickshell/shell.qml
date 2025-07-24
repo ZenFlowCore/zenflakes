@@ -7,6 +7,7 @@ import Quickshell.Wayland
 import "colors.js" as Colors
 import qs.widgets.audio
 import qs.widgets.border
+import qs.apps.applaunch
 import qs.bar
 
 Scope {

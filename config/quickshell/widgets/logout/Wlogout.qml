@@ -3,7 +3,6 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
 import Quickshell.Wayland
-import "../bar"
 import "root:/colors.js" as Colors
 
 Variants {

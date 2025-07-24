@@ -6,22 +6,20 @@ import QtQuick
 
 // your singletons should always have Singleton as the type
 Singleton {
-  id: root
+    id: root
 
-  readonly property string time: {
-    // The passed format string matches the default output of
-    // the `date` command
-    Qt.formatDateTime(clock.date, "hh\nmm\nss ")
+    readonly property string time: {
+        // The passed format string matches the default output of
+        // the `date` command
+        Qt.formatDateTime(clock.date, "hh\nmm\nss ");
+    }
 
-  }
+    readonly property string date: {
+        clock.date, "ddd MMM d AP t yy";
+    }
 
-  readonly property string date: {
-    clock.date, "ddd MMM d AP t yy" 
-  }
-
-  SystemClock {
-    id: clock
-    precision: SystemClock.Seconds
-  }
+    SystemClock {
+        id: clock
+        precision: SystemClock.Seconds
+    }
 }
-

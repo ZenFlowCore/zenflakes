@@ -11,7 +11,6 @@ in {
     # Programs!
     ../../home/modules/default.nix
     ../../home/modules/ricing/matugen/matugen.nix
-
     inputs.matugen.nixosModules.default
   ];
   home.packages = flows;

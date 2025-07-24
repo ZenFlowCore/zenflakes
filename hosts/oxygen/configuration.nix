@@ -10,7 +10,13 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
-
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+      PermitRootLogin = "no";
+    };
+  };
   services.power-profiles-daemon.enable = false;
   systemd.user.units.swaync.enable = true;
 

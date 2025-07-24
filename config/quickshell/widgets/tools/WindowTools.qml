@@ -3,11 +3,9 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
 import Quickshell.Wayland
-import "../../bars/eBars/bar"
 import "root:/colors.js" as Colors
-import "../styles/animations/"
+
 Variants {
-    id: root
     property color buttonColor: "transparent"
     property color buttonHoverColor: "#50" + Colors.primary.slice(1)
     default property list<ToolButtons> buttons
@@ -52,14 +50,11 @@ Variants {
         Rectangle {
             color: "#00" + Colors.background.slice(1)
             anchors.fill: parent
-        
-            
 
             MouseArea {
                 id: mous
                 anchors.fill: parent
                 onClicked: toolie.show = false
-
 
                 Rectangle {
 
@@ -68,49 +63,45 @@ Variants {
                     border.color: "#50" + Colors.primary.slice(1)
                     border.width: 4
 
-                    
                     anchors {
                         horizontalCenter: parent.horizontalCenter
                         leftMargin: 20
                         rightMargin: 20
-
                     }
                     height: size * 0.5 / 7
                     width: size * 0.7
                     bottomRightRadius: 20
                     bottomLeftRadius: 20
                     property int targetY: -200
-                    y: toolie.show? -4 : targetY
-                    
+                    y: toolie.show ? -4 : targetY
+
                     Behavior on y {
-                    NumberAnimation  {
-                        id: yAnim
-                        duration: 200
-                        easing.type: Easing.InOutCubic
-                        onFinished: {
-                            if (!toolie.show) {
-                            root.visible = false
+                        NumberAnimation {
+                            id: yAnim
+                            duration: 200
+                            easing.type: Easing.InOutCubic
+                            onFinished: {
+                                if (!toolie.show) {
+                                    root.visible = false;
+                                }
                             }
                         }
                     }
                 }
+                GridLayout {
+                    id: child
+                    anchors {
 
-                }
-                    GridLayout {
-                        id: child
-                        anchors {
-                        
                         horizontalCenter: parent.horizontalCenter
                     }
-                    
-                    y: toolie.show? 6 : -200
+
+                    y: toolie.show ? 6 : -200
                     Behavior on y {
                         NumberAnimation {
                             duration: 200
                             easing.type: Easing.InOutCubic
                         }
                     }
-                    
 
                     property var size: parent.width / 2
                     height: size * 0.35 / 7
@@ -118,7 +109,7 @@ Variants {
                     columns: 6
                     columnSpacing: 20
                     rowSpacing: 20
-                    
+
                     Repeater {
                         model: buttons
 
@@ -144,7 +135,6 @@ Variants {
                                 ColorAnimation {
                                     duration: 200
                                     easing.type: Easing.InOutCubic
-
                                 }
                             }
 
@@ -161,13 +151,9 @@ Variants {
                                 source: Quickshell.iconPath(`/home/zen/zenflakes/config/quickshell/icons/common/${modelData.icon}.svg`)
                                 implicitSize: 28
                             }
-
-
-                            
                         }
                     }
                 }
-            
             }
         }
     }
