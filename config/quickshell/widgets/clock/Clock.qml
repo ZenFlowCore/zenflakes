@@ -10,10 +10,12 @@ Item {
 
     StyledText {
         text: Time.time
-        font.family: "JetBrainsMono Nerd Font Mono"
         font.pointSize: 13
+        color: Colors.background
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
         anchors.horizontalCenter: parent.horizontalCenter
-        color: Colors.foreground
+        anchors.verticalCenter: parent.verticalCenter
     }
 
     property bool show: false

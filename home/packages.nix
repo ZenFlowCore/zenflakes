@@ -8,6 +8,7 @@ with pkgs; [
   rustup
   ghostty
   neofetch
+  zathura
   gcc
   ruby
   nodejs
@@ -15,6 +16,7 @@ with pkgs; [
   steam
   gnome-font-viewer
   yarn
+  blueman
   lua
   bun
   lua-language-server

@@ -19,18 +19,18 @@
   };
   services.power-profiles-daemon.enable = false;
   systemd.user.units.swaync.enable = true;
-
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true;
   services.flatpak.enable = true;
+
+  services.blueman.enable = true;
 
   programs.nix-ld.enable = true;
 
   programs.nix-ld.libraries = with pkgs; [
 
-    # Add any missing dynamic libraries for unpackaged programs
     brotli
     glib
-    # here, NOT in environment.systemPackages
-
   ];
 
   systemd.services.flatpak-repo = {

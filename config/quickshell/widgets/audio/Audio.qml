@@ -47,15 +47,18 @@ Scope {
         PanelWindow {
             id: volumeWindow
             anchors.left: true
-            implicitWidth: volumeBackground.implicitWidth + 32
-            implicitHeight: 200
+            margins.left: 21
+            implicitWidth: 48
+            implicitHeight: 196
             color: "transparent"
             exclusiveZone: 0
             mask: Region {}
             Rectangle {
                 anchors.fill: parent
-                color: "#00" + Colors.background.slice(1)
+                color: "#ff" + Colors.foreground.slice(1)
                 radius: 255
+                // Animate window appearance/disappearance
+                anchors.rightMargin: 9.8
                 opacity: root.show ? 1.0 : 0.0
 
                 Behavior on opacity {
@@ -165,9 +168,9 @@ Scope {
                         id: volumeBackground
                         Layout.fillHeight: true
                         Layout.alignment: Qt.AlignHCenter
-                        implicitWidth: 12
+                        implicitWidth: 10
                         radius: 20
-                        color: "#50ffffff"
+                        color: "#50" + Colors.blue.slice(1)
 
                         // Animate background color on volume change
                         Behavior on color {

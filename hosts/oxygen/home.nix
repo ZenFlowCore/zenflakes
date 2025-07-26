@@ -10,7 +10,6 @@ in {
   imports = [
     # Programs!
     ../../home/modules/default.nix
-    ../../home/modules/ricing/matugen/matugen.nix
     inputs.matugen.nixosModules.default
   ];
   home.packages = flows;
@@ -19,6 +18,7 @@ in {
     allowImages = true;
   };
   zen.modules = {
+    other.genshin.enable = true;
     desktop.quickshell.enable = true;
     desktop.music.cava.cava = {
       enable = true;

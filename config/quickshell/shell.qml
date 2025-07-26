@@ -9,12 +9,13 @@ import qs.widgets.audio
 import qs.widgets.border
 import qs.apps.applaunch
 import qs.bar
+import qs.notch
 
 Scope {
 
     Audio {}
 
-    Bar {}
+    Notch {}
 
     Connections {
         function onReloadCompleted() {

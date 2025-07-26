@@ -15,7 +15,7 @@
     };
 
     matugen.url = "github:InioX/Matugen";
-    ylix = {
+    Stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -37,7 +37,12 @@
       nixosConfigurations.oxygen = lib.nixosSystem {
         system = system;
         specialArgs = { inherit inputs; };
-        modules = [ ./hosts/oxygen/configuration.nix ];
+        modules = [
+          ./hosts/oxygen/configuration.nix
+          {
+
+          }
+        ];
       };
 
       homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
