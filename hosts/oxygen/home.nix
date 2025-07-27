@@ -35,6 +35,7 @@ in {
     desktop.apps.obsidian.enable = true;
     development.vscode.enable = true;
     development.zed-editor.enable = false;
+    navigation.yazi.enable = true;
     terminal.tmux.tmux.enable = true;
     terminal.foot.foot.enable = true;
     terminal.kitty.kitty.enable = true;

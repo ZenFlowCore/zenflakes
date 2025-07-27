@@ -16,7 +16,6 @@ in {
         allow_remote_control = true;
         window_padding_width = 13;
         confirm_os_window_close = 0;
-        background_opacity = 0.6;
       };
     };
   };

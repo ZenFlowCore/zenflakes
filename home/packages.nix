@@ -39,7 +39,6 @@ with pkgs; [
   fzf
   ulauncher
   zoxide
-  yazi
   wofi
   eza
   nautilus
