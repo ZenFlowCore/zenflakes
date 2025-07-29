@@ -10,6 +10,7 @@ with pkgs; [
   neofetch
   zathura
   gcc
+  logseq
   ruby
   nodejs
   vue

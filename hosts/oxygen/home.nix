@@ -18,7 +18,6 @@ in {
     allowImages = true;
   };
   zen.modules = {
-    other.genshin.enable = false;
     desktop.quickshell.enable = true;
     desktop.music.cava.cava = {
       enable = true;

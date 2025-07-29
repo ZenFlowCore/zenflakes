@@ -17,6 +17,13 @@
       PermitRootLogin = "no";
     };
   };
+  services.xserver = {
+    exportConfiguration = true; # link /usr/share/X11/ properly
+    enable = true;
+    layout = "us, it";
+    xkbOptions = "eurosign:e, compose:menu, grp:alt_space_toggle";
+  };
+  nixpkgs.config.allowUnsupportedSystem = true;
   services.power-profiles-daemon.enable = false;
   systemd.user.units.swaync.enable = true;
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -121,18 +128,11 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = false;
   services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

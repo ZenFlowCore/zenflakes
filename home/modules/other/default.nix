@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./genshin.nix ];
+  imports = [ ];
 }
