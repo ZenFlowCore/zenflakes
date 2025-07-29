@@ -4,8 +4,6 @@
     enable = true;
     wallpaper = ../../wallpapers/malenia.jpg;
     variant = "dark";
-    # contrast = 0.24;
-    # type = "scheme-expressive";
     package = pkgs.matugen;
   };
 

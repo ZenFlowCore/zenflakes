@@ -12,13 +12,13 @@ in {
     enable = mkEnableOption "to enable, or not to enable";
   };
 
-  imports = [ inputs.stylix.homeModules.stylix ./matugen/matugen.nix ];
+  imports = [ inputs.stylix.homeModules.stylix ];
 
   config = mkIf cfg.enable {
     stylix = {
       enable = true;
       polarity = currentPolarity;
-      image = wallpapers/malenia.jpg;
+      image = ./Wallpapers/_star_wars.jpg;
 
       # heavily modified but inspo from https://github.com/make-42/stylix/blob/matugen-clean-diff-rebuild/stylix/palette.nix
       override = with matugenTheme; {
