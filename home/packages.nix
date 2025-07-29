@@ -25,6 +25,7 @@ with pkgs; [
   basilk
   tre-command
   wl-clipboard-rs
+  pay-respects
   go
 
   python3

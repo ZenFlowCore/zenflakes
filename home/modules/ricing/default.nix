@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./matugen ../paths/flow-path.nix ];
+  imports = [ ./matugen ./stylix.nix ../paths/flow-path.nix ];
 }

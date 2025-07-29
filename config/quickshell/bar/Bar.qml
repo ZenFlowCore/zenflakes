@@ -12,6 +12,7 @@ import "root:/colors.js" as Colors
 import qs.widgets.test
 import qs.widgets.styles
 import qs.widgets.tools
+import qs.widgets.systray
 
 Scope {
     Variants {
@@ -65,10 +66,18 @@ Scope {
                         }
                     }
 
+                    SystemTray {
+                        bar: bar
+                        visible: true
+                        anchors.top: archie.bottom
+                        Layout.fillWidth: true
+                        Layout.fillHeight: false
+                    }
+
                     StyledRect {
                         id: toolie
                         anchors {
-                            top: archie.bottom
+                            top: systray.bottom
                         }
 
                         Tools {}

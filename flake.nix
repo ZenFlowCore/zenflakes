@@ -15,7 +15,7 @@
     };
 
     matugen.url = "github:InioX/Matugen";
-    Stylix = {
+    stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -26,7 +26,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, stylix, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -47,7 +47,7 @@
 
       homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/oxygen/home.nix ];
+        modules = [ ./hosts/oxygen/home.nix stylix.homeModules.stylix ];
         extraSpecialArgs = { inherit inputs; };
       };
     };
