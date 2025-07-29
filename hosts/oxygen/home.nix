@@ -26,11 +26,6 @@ in {
         overshoot = -90;
       };
     };
-    desktop.common.cursor.cursor = {
-      enable = true;
-      name = "Volantes";
-      size = 20;
-    };
     desktop.apps.obsidian.enable = true;
     development.vscode.enable = true;
     development.zed-editor.enable = false;

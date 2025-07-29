@@ -15,12 +15,7 @@ in {
           title = "foot";
           shell = "fish";
           pad = "15x15";
-          font = "JetBrainsMono Nerd Font Mono:size=12";
 
-        };
-        colors = {
-          alpha = 0.8;
-          background = "131314";
         };
         scrollback.lines = 10000;
       };

@@ -9,8 +9,6 @@ in {
   config = mkIf cfg.enable {
     programs.kitty = {
       enable = true;
-      font.name = "JetBrainsMono Nerd Font Mono";
-      font.size = 13;
       enableGitIntegration = true;
       settings = {
         allow_remote_control = true;
