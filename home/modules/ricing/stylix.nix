@@ -10,7 +10,7 @@ in {
 
   config = mkIf cfg.enable {
     stylix = {
-      base16Scheme = ./themes/colors.yml;
+      base16Scheme = ./themes/ayu-dark.yaml;
       enable = true;
       polarity = "dark";
       image = ./Wallpapers/_star_wars.jpg;
