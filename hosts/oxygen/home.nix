@@ -41,7 +41,7 @@ in {
     terminal.helix.helix.enable = true;
     terminal.zellij.zellij.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
-    other.stylix.enable = true;
+    ricing.stylix.enable = true;
 
   };
 

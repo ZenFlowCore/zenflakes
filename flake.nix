@@ -47,7 +47,7 @@
 
       homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/oxygen/home.nix stylix.homeModules.stylix ];
+        modules = [ ./hosts/oxygen/home.nix ];
         extraSpecialArgs = { inherit inputs; };
       };
     };
