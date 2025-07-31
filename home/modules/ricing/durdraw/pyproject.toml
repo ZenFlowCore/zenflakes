@@ -1,0 +1,12 @@
+[project]
+name = "durdraw"
+version = "1.0.0"
+description = "ASCII, Unicode and ANSI art editor"
+authors = [
+    {name = "Author Name", email = "author@example.com"}
+]
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
