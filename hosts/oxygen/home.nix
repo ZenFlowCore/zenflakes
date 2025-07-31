@@ -37,6 +37,7 @@ in {
     terminal.zellij.zellij.enable = true;
     terminal.oh-my-posh.oh-my-posh.enable = true;
     ricing.stylix.enable = true;
+    ricing.durdraw.durdraw.enable = true;
 
   };
 
