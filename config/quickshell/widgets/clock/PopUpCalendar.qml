@@ -16,7 +16,7 @@ Scope {
         height: 384
         width: 816
 
-        visible: false
+        visible: true
 
         exclusiveZone: 0
 
@@ -37,6 +37,20 @@ Scope {
                 onExited: scopie.show = false
             }
         }
+        mask: Region {
+            Region {
+                x: dashboard.x
+                y: dashboard.y
+                width: dashboard.width
+                height: dashboard.height
+            }
+            Region {
+                x: trigger.x
+                y: trigger.y
+                width: trigger.width
+                height: trigger.height
+            }
+        }
         color: "transparent"
         StyledRect {
             id: dashboard
@@ -54,7 +68,7 @@ Scope {
                 color: Colors.blue
             }
 
-            y: scopie.show ? 16 : -implicitHeight
+            y: scopie.show ? 0 : -implicitHeight
             anchors.horizontalCenter: parent.horizontalCenter
 
             color: Colors.blue
@@ -66,10 +80,16 @@ Scope {
             bottomLeftRadius: 16
             bottomRightRadius: 16
 
+            MouseArea {
+                hoverEnabled: true
+                anchors.fill: parent
+                onEntered: scopie.show = true
+                onExited: scopie.show = false
+            }
             Behavior on y {
                 NumberAnimation {
                     duration: 300
-                    easing.type: Easing.InOutQuad
+                    easing.type: Easing.InSine
                 }
             }
 

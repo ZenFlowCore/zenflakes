@@ -1,6 +1,6 @@
 
 var background = "#070704"
-var foreground = "#d4f0f4"
+var foreground = "#FFFFFF"
 var surface = "#14140c";
 var primary = "#c8cc78";
 var secondary = "#c9c9a6";

@@ -5,6 +5,7 @@ import "../styles"
 
 Item {
     id: clockie
+    z: 101
     implicitHeight: parent.width + 20
     implicitWidth: parent.width
 

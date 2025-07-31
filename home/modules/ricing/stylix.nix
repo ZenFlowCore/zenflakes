@@ -13,7 +13,7 @@ in {
       base16Scheme = ./themes/ayu-dark.yaml;
       enable = true;
       polarity = "dark";
-      image = ./current-wall;
+      image = ./Wallpapers/_star_wars.jpg;
 
       cursor = {
         name = "Bibata-Modern-Classic";

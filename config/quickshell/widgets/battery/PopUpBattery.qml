@@ -5,14 +5,15 @@ import Quickshell
 import QtQuick.Layouts
 import Quickshell.Services.UPower
 import "root:/colors.js" as Colors
-import "root:/widgets/styles"
+import qs.widgets.styles
+
 PopupWindow {
     id: poppie
     color: "#BB" + Colors.background.slice(1)
     anchor.item: parent
-    anchor.edges: Edges.Bottom | Edges.Right 
+    anchor.edges: Edges.Bottom | Edges.Right
     implicitWidth: 256
-    implicitHeight: 100 
+    implicitHeight: 100
     visible: batterie.show
     ColumnLayout {
         width: parent.width
@@ -31,7 +32,7 @@ PopupWindow {
         }
 
         Item {
-                
+
             width: parent.width / 1.2
             height: 20
             Layout.alignment: Qt.AlignHCenter
@@ -40,19 +41,24 @@ PopupWindow {
                 font.pointSize: 12
                 color: "#fff"
                 function onBatteryStateChange() {
-                var state = SingBattery.chargeState
+                    var state = SingBattery.chargeState;
 
-                if (state === UPowerDeviceState.Charging) return "Charging";
-                if (state === UPowerDeviceState.Discharging) return "Discharging";
-                if (state === UPowerDeviceState.Empty) return "Empty";
-                if (state === UPowerDeviceState.PendingCharge ) return "PendingCharge ";
-                if (state === UPowerDeviceState.PendingDischarge) return "PendingDischarge";
-                if (state === UPowerDeviceState.FullyCharged) return "FullyCharged";
-                if (state === UPowerDeviceState.Uknown) return "Huh";
+                    if (state === UPowerDeviceState.Charging)
+                        return "Charging";
+                    if (state === UPowerDeviceState.Discharging)
+                        return "Discharging";
+                    if (state === UPowerDeviceState.Empty)
+                        return "Empty";
+                    if (state === UPowerDeviceState.PendingCharge)
+                        return "PendingCharge ";
+                    if (state === UPowerDeviceState.PendingDischarge)
+                        return "PendingDischarge";
+                    if (state === UPowerDeviceState.FullyCharged)
+                        return "FullyCharged";
+                    if (state === UPowerDeviceState.Uknown)
+                        return "Huh";
+                }
             }
-
-         }
-     }
- }
-
+        }
+    }
 }
