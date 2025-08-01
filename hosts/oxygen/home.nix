@@ -1,16 +1,17 @@
 { config, pkgs, inputs, ... }:
 
-let flows = import ../../home/packages.nix { inherit pkgs; };
+let
+  flows = import ../../home/packages.nix { inherit pkgs; };
+  matugen = config.programs.matugen;
 in {
   home.username = "zen";
   home.homeDirectory = "/home/zen";
   home.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
-
+  matugenTheme = matugen.theme.files;
   imports = [
     # Programs!
     ../../home/modules/default.nix
-    inputs.matugen.nixosModules.default
   ];
   home.packages = flows;
   services.cliphist = {
@@ -38,6 +39,7 @@ in {
     terminal.oh-my-posh.oh-my-posh.enable = true;
     ricing.stylix.enable = true;
     ricing.durdraw.durdraw.enable = true;
+    ricing.matugen.matugen.enable = true;
 
   };
 

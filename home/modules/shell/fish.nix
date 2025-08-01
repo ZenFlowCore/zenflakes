@@ -10,6 +10,9 @@
 
 
             export OBSIDIAN_USE_WAYLAND=1
+            export ZENFLOW_SETTINGS_DIR="$ZENFLOW_SETTINGS_DIR:/home/zen/zenflow/quickshell/Settings"
+            export ZENFLOW_THEME_FILE="$ZENFLOW_THEME_FILE:/home/zen/zenflow/quickshell/Settings/Theme.json"
+
             export PATH="$PATH:/usr/lib/qt6/bin"
             set -x QS_NO_RELOAD_POPUP 1
             set -x PATH  "$HOME/.local/bin" $PATH

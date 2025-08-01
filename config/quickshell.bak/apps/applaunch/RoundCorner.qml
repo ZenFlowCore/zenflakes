@@ -1,1 +1,0 @@
-../../widgets/styles/RoundCorner.qml
