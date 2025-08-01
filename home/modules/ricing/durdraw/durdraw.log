@@ -1,0 +1,13 @@
+{"timestamp": "2025-07-31T10:42:32.579810+02:00", "level": "INFO", "name": "durdraw.ui_curses", "msg": "UserInterface created", "data": {}}
+{"timestamp": "2025-07-31T10:42:32.585641+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 23}}
+{"timestamp": "2025-07-31T10:42:32.586323+02:00", "level": "INFO", "name": "durdraw.movie", "msg": "movie initialized", "data": {"sizeX": 80, "sizeY": 23}}
+{"timestamp": "2025-07-31T10:42:32.649405+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.649709+02:00", "level": "INFO", "name": "durdraw.movie", "msg": "movie initialized", "data": {"sizeX": 79, "sizeY": 109}}
+{"timestamp": "2025-07-31T10:42:32.655524+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.668096+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.678565+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.691218+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.703632+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.715507+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.727898+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}
+{"timestamp": "2025-07-31T10:42:32.739787+02:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 79, "height": 109}}

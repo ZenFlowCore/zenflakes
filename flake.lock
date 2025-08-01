@@ -67,6 +67,27 @@
         "type": "github"
       }
     },
+    "durdraw": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749354934,
+        "narHash": "sha256-/x3hVmJ5/uYozNMShl6pNjGDDAEesl5HAY62GeXtnpo=",
+        "owner": "scottmckendry",
+        "repo": "durdraw",
+        "rev": "4d0c6102f7b6b3b8b562cf823154b58338437eb8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "scottmckendry",
+        "ref": "nix-flake",
+        "repo": "durdraw",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -276,6 +297,7 @@
     },
     "root": {
       "inputs": {
+        "durdraw": "durdraw",
         "home-manager": "home-manager",
         "matugen": "matugen",
         "nixpkgs": "nixpkgs_2",

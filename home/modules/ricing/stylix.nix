@@ -18,7 +18,7 @@ in {
       cursor = {
         name = "Bibata-Modern-Classic";
         package = pkgs.bibata-cursors;
-        size = 24;
+        size = 12;
       };
       fonts = {
         sansSerif = {
@@ -26,13 +26,13 @@ in {
           name = "ZedMono Nerd Font";
         };
         monospace = {
-          package = pkgs.nerd-fonts.jetbrains-mono;
-          name = "JetBrainsMono Nerd Font Mono";
+          package = pkgs.nerd-fonts.zed-mono;
+          name = "ZedMono Nerd Font";
         };
         sizes = {
           popups = 10;
           applications = 10;
-          terminal = 12;
+          terminal = 13;
           desktop = 10;
         };
       };

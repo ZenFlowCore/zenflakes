@@ -20,6 +20,7 @@ with pkgs; [
   blueman
   lua
   bun
+  lazygit
   lua-language-server
   astro-language-server
   basilk

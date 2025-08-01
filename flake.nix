@@ -8,12 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    durdraw.url = "github:cmang/durdraw";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    durdraw = {
+      url = "github:scottmckendry/durdraw/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     matugen.url = "github:InioX/Matugen";
     stylix = {
       url = "github:danth/stylix";
@@ -26,7 +28,7 @@
     };
   };
 
-  outputs = { self, stylix, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, durdraw, stylix, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };

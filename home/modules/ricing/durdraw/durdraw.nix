@@ -6,6 +6,6 @@ in {
     enable = mkEnableOption "Enable durdraw ASCII art editor";
   };
   config = mkIf cfg.enable {
-    home.packages = [ inputs.durdraw.${pkgs.system}.default ];
+    home.packages = [ inputs.durdraw.packages.x86_64-linux.default ];
   };
 }
