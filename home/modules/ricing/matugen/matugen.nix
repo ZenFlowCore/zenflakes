@@ -1,13 +1,22 @@
-{ inputs, config, pkgs, ... }: {
+{ lib, inputs, config, pkgs, ... }:
+with lib;
+let cfg = config.zen.modules.ricing.matugen.matugen;
+in {
+
+  options.zen.modules.ricing.matugen.matugen = {
+    enable = mkEnableOption "TO ENABLE OR NOT TO ENABLE";
+  };
+
+  config = mkIf cfg.enable {
+    programs.matugen = {
+      enable = true;
+
+      variant = "dark";
+      package = pkgs.matugen;
+    };
+
+  };
+
   imports = [ inputs.matugen.nixosModules.default ];
-  programs.matugen = {
-    enable = true;
 
-    variant = "dark";
-    package = pkgs.matugen;
-  };
-
-  home-manager.extraSpecialArgs = {
-    matugenTheme = config.programs.matugen.theme.files;
-  };
 }
