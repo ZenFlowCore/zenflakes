@@ -1,14 +1,11 @@
 { config, pkgs, inputs, ... }:
 
-let
-  flows = import ../../home/packages.nix { inherit pkgs; };
-  matugen = config.programs.matugen;
+let flows = import ../../home/packages.nix { inherit pkgs; };
 in {
   home.username = "zen";
   home.homeDirectory = "/home/zen";
   home.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
-  matugenTheme = matugen.theme.files;
   imports = [
     # Programs!
     ../../home/modules/default.nix

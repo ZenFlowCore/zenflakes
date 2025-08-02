@@ -22,6 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hjem.url = "github:feel-co/hjem";
+
     quickshell = {
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,15 +38,20 @@
     in {
       defaultPackage.${system} = home-manager.defaultPackage.${system};
 
-      nixosConfigurations.oxygen = lib.nixosSystem {
-        system = system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/oxygen/configuration.nix
-          {
+      nixosConfigurations = {
+        oxygen = lib.nixosSystem {
+          system = system;
+          specialArgs = {
+            inherit inputs;
+            users = "zen";
+          };
+          modules = [
+            ./hosts/oxygen/configuration.nix
+            ./modules
+            ./users
 
-          }
-        ];
+          ];
+        };
       };
 
       homeConfigurations.zen = home-manager.lib.homeManagerConfiguration {
